@@ -650,6 +650,7 @@ SELECT customerName, city,state FROM customers;
 SELECT customerName, city, IFNULL(state,'No State') FROM customers;
 
 SELECT productLine FROM products WHERE msrp IS NULL;
+
 SELECT AVG(buyPrice) WrongPrice , AVG(IFNULL (buyPrice,0)) PerfectPrice 
 	FROM products;
 
@@ -670,3 +671,7 @@ SELECT CONVERT('100',UNSIGNED INTEGER), CONVERT('-100',SIGNED INTEGER);
 
 SELECT CONVERT('2017-12-31',DATE), CONVERT('08:45:59',TIME);
 		
+SELECT * FROM employees;
+
+SELECT * FROM offices;
+
