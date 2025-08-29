@@ -173,6 +173,16 @@ SELECT * FROM staff;
 -- CHECK constraint to ensure that values stored in a column or group of 
 -- columns satisfy a Boolean expression.
 
+DESC staff;
+
+
+ALTER TABLE staff ADD salary DOUBLE(10,2) CHECK(salary > 10000)
+   AFTER doj;
+   
+ALTER TABLE staff ADD gender char(10) CHECK(gender IN ('Male', 'Female'))
+   AFTER doj;
+   
+   DESC staff;
 
 
 -- Unique Constraint
@@ -181,30 +191,41 @@ or group of columns to be unique.
 A UNIQUE constraint can be either a column constraint or a table constraint. */
 
 
+DESC staff;
 
 -- throw check constraint error for gender
 
-
+INSERT INTO staff VALUES
+(200, 'Raj', 'raj@test.com', 'Delhi', '2018-12-07', 'Mal', 15000, 999999);
 
 -- throw check constraint error for salary
+INSERT INTO staff VALUES
+(202, 'Sangmesh', 'sanga@test.com', 'Vijaypur', '2018-12-07', 'Male', 9000, 888888);
 
-
-
+SELECT * FROM staff;
 
 
 -- throw PRIMARY KEY constraint error for ID
+INSERT INTO staff VALUES
+(202, 'Raj', 'raj@test.com', 'Delhi', '2018-12-07', 'Male', 15000, 8686869);
 
-
--- throw check constraint error for salary
-
+INSERT INTO staff VALUES
+(203, 'Raj', 'raj@test.com', 'Delhi', '2018-12-07', 'Male', 15000, 8686869);
 
 
 -- throw unique constraint error for phone no
 
+INSERT INTO staff VALUES
+(204, 'Monty', 'monty@test.com', 'Chennai', '2012-12-07', 'Male', 19000, 8686869);
 
-
+INSERT INTO staff VALUES
+(204, 'Monty', 'monty@test.com', 'Chennai', '2012-12-07', 'Male', 19000, 8686879);
 
 -- not null constraint 
+
+
+INSERT INTO staff VALUES
+(110, 'Navin', 'navin@test.com', 'blr', '2012-12-07', 'Female', NULL, 8686831);
 
 
 
@@ -224,13 +245,60 @@ Syntax: [CONSTRAINT constraint_name]
     ON DELETE referenceOption  
     ON UPDATE referenceOption  */
 
-USE coforge;
+USE coforgedb;
+create TABLE departments ( -- primary table
+   d_id INT PRIMARY KEY,
+   dept_name VARCHAR(15));
+   
+   
+create TABLE employees ( -- secondary table
+   emp_id INT AUTO_INCREMENT PRIMARY KEY,
+   first_name VARCHAR(50) NOT NULL,
+   last_name VARCHAR(50) NOT NULL,
+   dob DATE NOT NULL,
+   STATUS TINYINT NOT NULL,
+   DESCRIPTION TEXT,
+   doj TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   dept_id INT NOT NULL,
+   CONSTRAINT fk_empDept FOREIGN KEY(dept_id)
+   REFERENCES departments(d_id)
+   
+   -- ON DELETE CASCADE
+   -- ON UPDATE RESTRICT
+   );
+   
+   DESC EMPLOYEES;
+   DESC departments;
+   
+   INSERT INTO departments VALUES(101,'CSE');
+INSERT INTO departments VALUES(102,'Mech');
+INSERT INTO departments VALUES(103,'EE');
+SELECT * FROM departments;
 
 
+
+INSERT INTO employees VALUES(1001,'Raj','Mark','2012-12-12',2,'Employees Salary and 
+		Client payments',CURRENT_DATE, 101);
+
+SELECT * FROM employees;
+
+   
 
 
 -- foreign key error
 
+INSERT INTO employees VALUES(1002,'Mary','John','2012-12-12',2,'Electrician',
+				CURRENT_DATE, 101);
+
+INSERT INTO employees VALUES(1002,'Mary','John','2012-12-12',2,'Electrician',
+				CURRENT_DATE, 101);
+
+INSERT INTO employees VALUES(1003,'Jk','John','2012-12-12',2,'Electrician',
+				CURRENT_DATE, 103);
+
+SELECT * FROM employees;
+
+DELETE FROM departments WHERE d_id=101;  -- foreign key error
 
 /* CASCADE: It is used when we delete or update any row from the 
 parent table, the values of the matching rows in the child table 
@@ -240,7 +308,11 @@ RESTRICT: It is used when we delete or update any row from the parent
 table that has a matching row in the reference(child) table, 
 MySQL does not allow to delete or update rows in the parent table. */
 
+SELECT * FROM departments;
 
+SELECT * FROM employees;
+
+DELETE FROM departments WHERE d_id=103;  -- Not allows to delete a record , because of foreign key
 
 -- cascade demo
 
