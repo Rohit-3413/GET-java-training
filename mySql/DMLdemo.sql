@@ -14,25 +14,28 @@ USE classicmodels;
 
 DESC customersbackup2025;
 
+
 INSERT INTO customersbackup2025 VALUES(
 9999, 'Raj Associates','GS', 'Rohit', '5444871236', 'SHri Nilaya',
   'Down Town Lane', 'Udupi', 'Karnataka', '574101', 'India',NULL, 50000.00);
   
 SELECT * FROM customersbackup2025;
 
-SELECT * FROM department;
+USE coforgedb;
 
-INSERT INTO department values(100,'Technical');
+SELECT * FROM departments;
 
-INSERT INTO department values(103,'Production');
+INSERT INTO departments values(100,'Technical');
 
-INSERT INTO department values(105,'Travel');
+INSERT INTO departments values(104,'Production');
 
-SELECT * FROM department;
+INSERT INTO departments values(105,'Travel');
+
+SELECT * FROM departments;
 
 -- Insert demo specifying columns fields
 
-DESC department;
+DESC departments;
 
 INSERT INTO department(deptName,fees,email) VALUES('Mech',75000,'mech@vtu.ac.in');
 

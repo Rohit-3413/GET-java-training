@@ -358,12 +358,14 @@ INSERT INTO employees1 VALUES(1001,'Raj','Mark','2012-12-12',2,'Employees Salary
 		
 	SELECT * FROM employees1;
 	
-INSERT INTO employees1 VALUES(1002,'Mary','John','2012-12-12',2,'Employees Salary and 
-		Client payments',CURRENT_DATE, 103);
+INSERT INTO employees1 VALUES(1002,'Mary','John','2012-12-12',2,'Electrician',CURRENT_DATE, 103);
 		
-INSERT INTO employees1 VALUES(1003,'Jk','John','2012-12-12',2,'Employees Salary and 
-		Client payments',CURRENT_DATE, 103);
+INSERT INTO employees1 VALUES(1003,'Jk','John','2012-12-12',2,'Electrician',CURRENT_DATE, 103);
 		
 SELECT * FROM employees1;
 	
 SELECT * FROM departments1;
+
+DELETE FROM departments1 WHERE d_id=103; -- deletes bcoz of an cascade
+
+UPDATE departments1 SET d_id=111 WHERE d_id=101;
