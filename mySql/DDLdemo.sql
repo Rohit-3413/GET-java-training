@@ -270,7 +270,7 @@ create TABLE employees ( -- secondary table
    DESC EMPLOYEES;
    DESC departments;
    
-   INSERT INTO departments VALUES(101,'CSE');
+INSERT INTO departments VALUES(101,'CSE');
 INSERT INTO departments VALUES(102,'Mech');
 INSERT INTO departments VALUES(103,'EE');
 SELECT * FROM departments;
@@ -312,8 +312,58 @@ SELECT * FROM departments;
 
 SELECT * FROM employees;
 
-DELETE FROM departments WHERE d_id=103;  -- Not allows to delete a record , because of foreign key
+DELETE FROM departments WHERE d_id=103; -- Not allows to delete a record , bcoz of foreign key
+
+UPDATE  departments SET dept_name='Royal Mech' WHERE d_id=102;
+
+UPDATE  departments SET dept_name='Electrical' WHERE d_id=103;
+
+UPDATE employees SET dept_id=101 WHERE emp_id=1003;
 
 -- cascade demo
 
+create TABLE departments1 ( -- primary table
+   d_id INT PRIMARY KEY,
+   dept_name VARCHAR(15));
+   
+   
+create TABLE employees1 ( -- secondary table
+   emp_id INT AUTO_INCREMENT PRIMARY KEY,
+   first_name VARCHAR(50) NOT NULL,
+   last_name VARCHAR(50) NOT NULL,
+   dob DATE NOT NULL,
+   STATUS TINYINT NOT NULL,
+   DESCRIPTION TEXT,
+   doj TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   dept_id INT NOT NULL,
+   CONSTRAINT fk_empDept1 FOREIGN KEY(dept_id)
+   REFERENCES departments1(d_id)
+   
+    ON DELETE CASCADE
+    ON UPDATE RESTRICT
+   );
+   
+desc employees1;
+DESC departments1;
 
+DROP TABLE employees1;
+
+INSERT INTO departments1 VALUES(101,'CSE');
+INSERT INTO departments1 VALUES(102,'Mech');
+INSERT INTO departments1 VALUES(103,'EE');
+SELECT * FROM departments1;
+
+INSERT INTO employees1 VALUES(1001,'Raj','Mark','2012-12-12',2,'Employees Salary and 
+		Client payments',CURRENT_DATE, 101);
+		
+	SELECT * FROM employees1;
+	
+INSERT INTO employees1 VALUES(1002,'Mary','John','2012-12-12',2,'Employees Salary and 
+		Client payments',CURRENT_DATE, 103);
+		
+INSERT INTO employees1 VALUES(1003,'Jk','John','2012-12-12',2,'Employees Salary and 
+		Client payments',CURRENT_DATE, 103);
+		
+SELECT * FROM employees1;
+	
+SELECT * FROM departments1;
