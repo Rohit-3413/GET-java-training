@@ -17,7 +17,7 @@ public class CargoShipment {
     private String cargoType;
     
     
-    // Constructor 2: Shipment with sender, receiver, and weight
+    // Constructor 1: Shipment & destination
 	public CargoShipment(String shipmentId, String destination)
 	{
 		this.shipmentId = shipmentId;
@@ -46,5 +46,16 @@ public class CargoShipment {
 		this.destination = destination;
 		this.cargoType = cargoType;
 	}
+	
+	// Method to display shipment details
+    public void showShipmentDetails() {
+        System.out.println("Shipment ID: " + shipmentId);
+        System.out.println("Sender: " + sender);
+        System.out.println("Receiver: " + receiver);
+        System.out.println("Weight: " + weight + " kg");
+        System.out.println("Destination: " + destination);
+        System.out.println("Cargo Type: " + cargoType);
+        System.out.println("-----------------------------------");
+    }
 	
 }
