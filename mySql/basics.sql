@@ -1,4 +1,4 @@
-SELECT VERSION();
+productlinesproductsSetCounterclassicmodelscustomersSELECT VERSION();
 
 SELECT NOW(),CURRENT_DATE;
 
@@ -10,3 +10,4 @@ CREATE DATABASE mydb;
 
 USE mydb;
 
+mysql
