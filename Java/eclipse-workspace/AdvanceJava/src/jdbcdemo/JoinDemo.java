@@ -12,6 +12,8 @@ import java.sql.Statement;
  * project  :AdvanceJava
 */
 
+// JDBC code to display the skills of members
+
 public class JoinDemo {
 
 	public static void main(String[] args) {
