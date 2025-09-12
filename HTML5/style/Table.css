@@ -1,0 +1,52 @@
+/* External Style Sheet */
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: crimson;
+    text-align: center;
+    border: 3px solid blue;
+    background-color: aqua;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+}
+
+#spring{
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#spring th,td{
+    text-align: center;
+    border: 2px solid; 
+    padding: 10px;
+}
+
+#spring tr:nth-child(even){background-color: #e0d1d1;}
+#spring tr:nth-child(odd){background-color:cornflowerblue}
+  
+  #spring tr:hover {background-color: #ce7474;}
+  
+  #spring th {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #hello{
+    border: 2px solid red;
+    margin: auto;
+    width:600px;
+    border-spacing: 20px;
+  }
+
+  #hello th,td{
+    border: 2px solid red;
+    padding: 20px;
+    
+  }

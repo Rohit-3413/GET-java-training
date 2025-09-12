@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Demo</title>
+
+    <!-- Link External StyleSheet -->
+     <link rel="stylesheet" href="style/Table.css">
+</head>
+<body>
+    <h1>Graphic Era Hill University</h1>
+    <img src="images/gehu.webp" alt="GEHU Logo" width="150px;" height="250px">
+    <hr>
+
+    <table id = "spring">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Technology</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10001</td>
+            <td>James Gosling</td>
+            <td>Computer Science</td>
+            <td>Java</td>
+        </tr>
+        <tr>
+                <td>10002</td>
+                <td>Gavin King</td>
+                <td>Information Technolgy</td>
+                <td>Hibernate</td>
+            </tr>
+            <tr>
+                <td>10003</td>
+                <td>Rod Johnson</td>
+                <td>Electronics</td>
+                <td>Spring FW</td>
+            </tr>
+            <tr>
+                <td>10004</td>
+                <td>Rossen Stoyanchev</td>
+                <td>Electrical</td>
+                <td>Spring Web Flux</td>
+            </tr>
+            <tr>
+                <td>10005</td>
+                <td>Stacy Takeuchi</td>
+                <td>Computer Science</td>
+                <td>Swagger</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <br><br>
+    <!-- 
+Cell padding is the space between the cell edges and the cell content.
+Cell spacing is the space between each cell.
+-->
+    <!--Rowspan & Colspan - Merging/Split of Rows & Cols-->
+    <table id="hello">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th colspan="3">Technology</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Naveen</td>
+                <td colspan="3">Java Script</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Mike</td>
+                <td>Hibernate</td>
+                <td>JDBC</td>
+                <td>MySQL</td>
+            </tr>
+            <tr>
+                <td rowspan="3">103</td>
+                <td rowspan="3">Mary</td>
+                <td colspan="3">Spring Framework</td>
+            </tr>
+            <tr>
+                <td colspan="3">Spring Boot</td>
+            </tr>
+            <tr>
+                <td colspan="3">Mongo DB</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Deepak</td>
+                <td colspan="2">WebFlux</td>
+                <td>Micro Services</td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <img src="https://careers.coforge.com/images/Guy_new.png" alt="">
+</body>
+</html>

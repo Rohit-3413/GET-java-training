@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Training Institute — Bullets & Numbering Examples</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #ffffff;
+      color: #222;
+    }
+    h1 { color: darkblue; }
+    h2 { color: darkgreen; }
+    h3 { color: brown; }
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 15px 0;
+      background: #f9f9f9;
+    }
+    /* Bullet styles */
+    .ul-disc { list-style-type: disc; }
+    .ul-circle { list-style-type: circle; }
+    .ul-square { list-style-type: square; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li::before {
+      content: "✔ ";
+      color: green;
+    }
+
+    /* Numbering styles */
+    .ol-decimal { list-style-type: decimal; }
+    .ol-roman { list-style-type: upper-roman; }
+    .ol-alpha { list-style-type: lower-alpha; }
+
+    /* Description list */
+    dt { font-weight: bold; }
+    dd { margin: 0 0 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>ByteCraft Institute — Bullets & Numbering Demo</h1>
+  <p>Examples showing unordered, ordered, nested, and custom lists with simple CSS.</p>
+
+  <div class="card">
+    <h2>1. Unordered Lists (Bullets)</h2>
+    <h3>Disc</h3>
+    <ul class="ul-disc">
+      <li>Foundation Courses</li>
+      <li>Programming</li>
+      <li>Web Development</li>
+    </ul>
+
+    <h3>Circle</h3>
+    <ul class="ul-circle">
+      <li>Professional Certifications</li>
+      <li>Cloud & DevOps</li>
+    </ul>
+
+    <h3>Square</h3>
+    <ul class="ul-square">
+      <li>Soft Skills</li>
+      <li>Internships</li>
+    </ul>
+
+    <h3>Checklist</h3>
+    <ul class="checklist">
+      <li>Submit application form</li>
+      <li>Attend orientation session</li>
+      <li>Choose a course and pay fee</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. Ordered Lists (Numbering)</h2>
+    <h3>Decimal</h3>
+    <ol class="ol-decimal">
+      <li>Fill out admission form</li>
+      <li>Attend entrance test</li>
+      <li>Confirm payment</li>
+    </ol>
+
+    <h3>Roman</h3>
+    <ol class="ol-roman">
+      <li>Prerequisite reading</li>
+      <li>Workshop</li>
+    </ol>
+
+    <h3>Alphabetical</h3>
+    <ol class="ol-alpha">
+      <li>Module A</li>
+      <li>Module B</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>3. Nested Lists</h2>
+    <ol>
+      <li>Web Development Track
+        <ul>
+          <li>HTML</li>
+          <li>CSS
+            <ol>
+              <li>Responsive design</li>
+              <li>Animations</li>
+            </ol>
+          </li>
+          <li>JavaScript</li>
+        </ul>
+      </li>
+      <li>Data Science Track
+        <ul>
+          <li>Python</li>
+          <li>Statistics</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>4. Description List</h2>
+    <dl>
+      <dt>Course Duration</dt>
+      <dd>3 months (full-time) / 6 months (part-time)</dd>
+      <dt>Batch Size</dt>
+      <dd>Max 20 students</dd>
+      <dt>Mode</dt>
+      <dd>Classroom / Online</dd>
+    </dl>
+  </div>
+</body>
+</html>
