@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class & Id Selectors Demo</title>
+    <link rel="stylesheet" href="style/Coffee.css">
+</head>
+<body>
+      <!-- Header uses an id so we can target it specifically -->
+<header id="site-header">
+<h1 id="main-title">Love for Coffee ☕</h1>
+<p class="tagline">A tiny demo showing <strong>class</strong> and <strong>id</strong> selectors in CSS</p>
+</header>
+<div style="justify-content:center; text-align: center; ">
+<img style="height: 200px; width: 230px;" src="images/coffee.webp" alt="Coffee">
+</div>
+
+<!-- Main content: the section has an id so the CSS can scope styles or layout to it -->
+<main id="coffee-section">
+<section class="card">
+<h2 class="section-title">Popular Coffee Types</h2>
+
+
+<!-- .coffee-list is a class shared by lists of coffees -->
+<ul class="coffee-list">
+<!-- .coffee-item is a class applied to each item. individual items can have their own id or extra classes -->
+<li class="coffee-item favorite" id="espresso">Espresso — strong and bold</li>
+<li class="coffee-item">Americano — espresso + hot water</li>
+<li class="coffee-item favorite">Cappuccino — frothy and creamy</li>
+<li class="coffee-item">Latte — milk-forward and smooth</li>
+<li class="coffee-item">Mocha — chocolate + coffee</li>
+</ul>
+
+
+<!-- A small note with a class to show class selector styling -->
+<p class="note">Tip: Use <code>id</code> to style one unique element, and <code>class</code> to style groups of elements.</p>
+</section>
+
+
+<section class="card" id="how-to-brew">
+<h2 class="section-title">How to Brew (Quick)</h2>
+<ol class="steps">
+<li class="step">Choose fresh beans.</li>
+<li class="step">Grind to the appropriate consistency.</li>
+<li class="step favorite">Brew with the right water temperature.</li>
+<li class="step">Serve and enjoy!</li>
+</ol>
+<p class="note">This content uses classes like <code>.step</code> for repeated items and an id <code>#how-to-brew</code> to reference this specific section.</p>
+</section>
+</main>
+
+
+<footer id="site-footer" class="muted">
+<p>Made with ☕ — CSS demo using <strong>class</strong> and <strong>id</strong> selectors.</p>
+</footer>
+</body>
+</html>

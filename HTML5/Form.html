@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form - Coforge</title>
+    <link rel="stylesheet" href="style/form.css">
+</head>
+<body>
+     <div id="head">
+         <img src="https://www.coforge.com/hubfs/website-assets/coforge-logo.svg" alt="Coforge Logo" id="logo">
+        <h1>Coforge Technologies</h1>
+    </div>
+
+    <div class="container">
+        <h2>Employee Registration Form</h2>
+
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="firstname" >First Name :</label>
+                <input type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="Enter Your First Name"
+                pattern="[A-Za-z]+"
+                title="First Name Should contain only letters"
+                required
+                autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname" >Last Name :</label>
+                <input type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Enter Your Last Name"
+                pattern="[A-Za-z]+"
+                title="Last Name Should contain only letters">
+            </div>
+
+            <div class="form-group">
+                <label for="email" > Email :</label>
+                <input type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your email"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" >Phone Number :</label>
+                <input type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Enter Phone Number"
+                required
+                pattern="[0-9]{10}"
+                title="Phone Number should contain 10 digits">
+            </div>
+
+             <div class="form-group">
+                <label for="password" >Password :</label>
+                <input type="password"
+                name="password"
+                id="password"
+                placeholder="Enter Password"
+                required
+                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,14}" 
+                 title="Must contain at least one number and 
+                      one uppercase and lowercase letter, and at 
+                      least 8 or max 14 characters">
+                <!-- (?=.*[a-z]) - At least one lowercase letter(a - z).
+                    (?=.*\d) - At least one Numeric Digit (0-9)
+                    (?=.*[A-Z]) - - At least one Upper case letter(A - Z).
+                   -->
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+
+            <!-- Skills Checkbox -->
+            <div class="form-group">
+                <label>Skills:</label>
+                <label><input type="checkbox" name="skills" value="Java"> Java</label>
+                <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                <label><input type="checkbox" name="skills" value="SQL"> SQL</label>
+            </div>
+
+            
+            <!-- Department Dropdown List -->
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Travel">Travel</option>
+                </select>
+            </div>
+
+            <!-- Address Textarea -->
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" 
+                name="address" 
+                rows="4" 
+                required 
+                minlength="10" 
+                maxlength="200" 
+                title="Address should be between 10 to 200 characters long.">
+              </textarea>
+            </div>
+
+               <!-- HTML5 Form Controls -->
+            <!-- Date -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required title="Select ur Date of Birth">
+            </div>
+
+            <!-- Month -->
+            <div class="form-group">
+                <label for="start_month">Preferred Start Month:</label>
+                <input type="month" id="start_month" name="start_month">
+            </div>
+
+            <!-- Week -->
+            <div class="form-group">
+                <label for="week">Preferred Start Week:</label>
+                <input type="week" id="week" name="week">
+            </div>
+
+            <!-- Time -->
+            <div class="form-group">
+                <label for="interview_time">Preferred Interview Time:</label>
+                <input type="time" id="interview_time" name="interview_time">
+            </div>
+
+            <!-- Color Picker -->
+            <div class="form-group">
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <!-- Range Slider -->
+            <div class="form-group">
+                <label for="experience">Years of Experience:</label>
+                <input type="range" id="experience" name="experience" min="0" max="40" step="1" value="0" required>
+                <output id="experienceOutput">0</output> years
+            </div>
+
+            <div class="form-group">
+                <label for="website">Personal Website:</label>
+                <input type="url" id="website" name="website">
+            </div>
+
+            <!-- Search -->
+            <div class="form-group">
+                <label for="search">Search:</label>
+                <input type="search" id="search" name="search">
+            </div>
+
+            <!-- Upload Resume -->
+            <div class="form-group">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+             <!--Action Buttons-->
+            <div class="form-group">
+               <button type="submit">Submit</button> <br>
+               <button type="reset">Reset</button>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        const experienceInput = document.getElementById('experience');
+        const experienceOutput = document.getElementById('experienceOutput');
+
+        experienceInput.addEventListener('input', function() {
+            experienceOutput.value = experienceInput.value;
+        });
+    </script>
+</body>
+      
+</html>

@@ -1,0 +1,88 @@
+/* ID selector: targets the single main title by its unique id */
+
+#main-title{
+    /* Background properties */
+  background-color: #f0f0f0; /* Sets a light grey background color */
+   border: 2px solid #333; /* Sets a 2px solid dark grey border */
+  border-radius: 5px; /* Rounds the corners of the border */
+  padding: 10px;
+  color: brown;
+}
+
+/* Class selector for section headings */
+.section-title {
+margin-top: 0;
+font-size: 1.25rem;
+letter-spacing: 0.5px;
+color:crimson;
+}
+
+
+/* Class selector applied to the list container */
+.coffee-list {
+padding-left: 1.25rem;
+}
+
+
+/* Class selector for each coffee item */
+.coffee-item {
+padding: 0.35rem 0.25rem;
+line-height: 1.5;
+border-left: 3px solid transparent; /* visible when favorite */
+}
+
+
+/* Combining class selector with class (multiple classes on same element)
+This targets elements that have both .coffee-item and .favorite */
+.coffee-item.favorite {
+border-left-color: #b45f06;
+background: rgba(180,95,6,0.05);
+font-weight: 600;
+}
+
+
+/* ID selector for a specific item (espresso) to give it distinctive style */
+#espresso {
+text-transform: uppercase;
+letter-spacing: 0.6px;
+}
+
+
+/* Descendant selector using an ID and class together: targets .note inside #coffee-section */
+#coffee-section .note {
+font-size: 0.9rem;
+color: #555;
+margin-top: 0.75rem;
+}
+
+
+/* Class for step items; shows how the same class applies across lists */
+.step {
+margin: 0.4rem 0;
+}
+
+
+/* Example of class selector with another class (muted footer) */
+.muted {
+color: #6c6c6c;
+text-align: center;
+padding: 1rem 0;
+}
+
+
+/* ID selector to style the footer specifically */
+#site-footer {
+margin-top: 2rem;
+border-top: 1px solid #eee;
+}
+
+
+/* Responsive tweak using the ID of the main section */
+@media (max-width: 480px) {
+#coffee-section {
+padding: 0 0.75rem;
+}
+#main-title  {
+font-size: 1.5rem;
+}
+}
