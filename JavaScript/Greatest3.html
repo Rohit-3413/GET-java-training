@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-elseif-else in JS</title>
+</head>
+<body>
+    
+ <h1>Greatest of 3 Numbers -If ElseIf -Else</h1>
+    <script>
+        var a,b,c;
+        a = parseInt(prompt("Enter First number : "));
+        b = parseInt(prompt("Enter second number : "));
+        c = parseInt(prompt("Enter third number : "));
+ 
+        // Logical Operators -> It is used to combine Multiple Conditions 
+        //  1. AND - &&   --> Evalutes to TRUE if ALL conditions are satisfied
+        //  2. OR - ||   --> Evalutes to TRUE if any One conditions are satisfied
+        //  3. NOT - !   --> Negate the condition
+        
+        if(a>b && a>c)
+        {
+            document.write("<h2> "+a+" is Greatest");
+        }
+        else if (b>c)  {
+            document.write("<h2> "+b+" is Greatest");
+        }
+
+        
+        else{
+            document.write("<h2> "+c+" is Greatest");
+        }
+       </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Statement 3</title>
+</head>
+<body>
+          <h1>Switch Case with Strings</h1>
+
+    <script>
+        var expr=prompt("Enter a Fruit name to know the price:");
+var fruit=expr.toLowerCase();
+switch (fruit) {
+  case 'oranges':
+    document.write('Oranges are $0.59 a pound.');
+    break;
+  case 'apples':
+    document.write('Apples are $0.32 a pound.');
+    break;
+  case 'bananas':
+    document.write('Bananas are $0.48 a pound.');
+    break;
+  case 'cherries':
+    document.write('Cherries are $3.00 a pound.');
+    break;
+  case 'mangoes':
+  case 'papayas':
+    document.write('Mangoes and papayas are $2.79 a pound.');
+    break;
+  default:
+    document.write('Sorry, we are out of ' + expr + '.');
+}
+
+document.write("Is there anything else you'd like?");
+    </script>
+</body>
+</html>

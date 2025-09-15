@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Statement 2</title>
+</head>
+<body>
+      <h1>JavaScript Combine Multiple Cases in a Switch Case Statement</h1>
+    <script>
+    var d = new Date();
+
+	switch(d.getDay()) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			document.write("It is a weekday.");
+			break; 
+		case 0:
+		case 6:
+			document.write("It is a weekend day.");
+			break;
+		default: 
+			document.write("Enjoy every day of your life.");
+	}
+    </script>
+</body>
+</html>
