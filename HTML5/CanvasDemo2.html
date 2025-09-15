@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1> HTML Graphics - Using Canvas Element</h1>
+    <canvas id="myCanvas" width="300" height="200" 
+    style="border:1px solid #000000"></canvas>
+
+    <br>  <br>
+    <canvas id="myCanvas1" width="300" height="200" 
+    style="border:1px solid #000000"></canvas>
+
+    <script>
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+    
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(300,200);
+        ctx.strokeStyle="red";
+        ctx.lineWidth=10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(300,0);
+        ctx.lineTo(0,200);
+        ctx.strokeStyle="green";
+        ctx.lineWidth=10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(150,0);
+        ctx.lineTo(150,200);
+        ctx.strokeStyle="blue";
+        ctx.lineWidth=10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0,100);
+        ctx.lineTo(300,100);
+        ctx.strokeStyle="brown";
+        ctx.lineWidth=10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(150,100,50,0,2*Math.PI);
+        ctx.fillStyle="yellow";
+        ctx.fill();
+        ctx.strokeStyle="aqua";
+        ctx.lineWidth=5;
+        ctx.stroke();
+
+        var c1=document.getElementById("myCanvas1");
+        var ctx1=c1.getContext("2d");
+
+        ctx1.fillStyle="red";
+        ctx1.fillRect(50,30,200,150);
+
+        ctx1.fillStyle="yellow";
+        ctx1.fillRect(70,50,160,110);
+
+        ctx1.fillStyle="green";
+        ctx1.fillRect(90,70,120,70);
+
+        ctx1.font="28px Calibri";
+        ctx1.fillStyle="aqua";
+        ctx1.fillText("Coforge",100,110);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2*Math.PI);
+        ctx.fillStyle = "#0000FF";
+        ctx.fill();
+        ctx.stroke();  /*To actually draw the circle, we must use one of the "link" methods, like stroke() or fill() */
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(180, 75, 10, 0, 2*Math.PI);
+        ctx.strokeStyle = "#FF0000";
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(0,0);    // start point of line
+        ctx.lineTo(200,100);    // end point of line
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "crimson";
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(0,100);    // start point of line
+        ctx.lineTo(200,0);    // end point of line
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "green";
+        ctx.stroke();
+        ctx.closePath();
+
+    </script>
+</body>
+</html>

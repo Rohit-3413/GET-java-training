@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS# Transformation</title>
+    <style>
+.square{
+    width:100px;
+    height:100px;
+    background-color: yellow;
+    border:5px solid black;
+    margin:100px;
+    transition:transform 1s;
+}
+   .square:hover{ transform:scale(2,3); }
+
+.droplet{ width:100px;
+    height:100px;
+    background-color: mediumaquamarine;
+    border-radius:10% 50%;
+    margin:100px;
+    transition:all 3s;
+    transition-timing-function:ease-in-out;}
+
+.droplet:hover{ transform:rotateX(360deg); }
+
+.skew{
+                width:100px;
+                height: 100px;
+                background-color:pink;
+                margin: 100px;
+                padding: 50px;
+                transition: transform 1s;
+
+   }
+    .skew:hover{transform: skew(60deg);} 
+
+    #test{
+        width: 100px;
+        height: 100px;
+    }#test:hover{transform: translate(500px, 18px);}
+
+    h1{
+        border: 2px solid red;
+        background-color: mediumspringgreen;
+        border-radius: 40px 15px;
+        padding: 10px;
+        width: 300px;
+    }
+
+
+</style>
+</head>
+<body>
+    
+<h1>The Scale() Method - 2D Transformation</h1>
+<div class="square"></div>
+<h1>The rotateX() Method -3D Transformation</h1>
+<div class="droplet"></div>
+<h1>The Skew() method</h1>
+    <div class="skew">CSS3</div>
+
+<h1>The Translate() method</h1>
+
+    <div id="test">
+        <img src="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" alt="">
+    </div>
+</body>
+</html>

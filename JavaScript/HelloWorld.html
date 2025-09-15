@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS embeded in html</title>
+</head>
+<body>
+    <h1 style="color: brown;">javascript introduction</h1>
+    <hr>
+    <script>
+        //javascript code from here
+        //Js is case sensitive
+        document.writeln("Hello world from javaScript");
+        document.writeln("<br> this is a new line");
+        document.writeln("<h2> this is a new line </h2>");
+
+        //Js to add 2 num
+        var n1,n2,sum;    //js takes dynamic data types
+
+        //prompt - used to take input from user at runtime
+        name=prompt("Enter ur name");
+        n1=parseInt(prompt("enter 1st number"));
+        n2=parseInt(prompt("enter 2nd number"));
+
+        sum=n1+n2;
+
+        //print values in console
+        console.log(sum);
+        console.log(name);
+
+        document.write("<br>"+"Hello "+name+"<br>");
+        document.writeln("The Addition of 2 numbers is : "+sum);
+
+        alert("Thank you JS "+name);
+        alert(100+300);
+
+
+    </script>
+    <h3>Thank you. HTML</h3>
+</body>
+</html>

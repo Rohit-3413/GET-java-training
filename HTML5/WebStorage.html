@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage Demo</title>
+</head>
+<body>
+     <h1>HTML5 Local Storage & Session Storage Example</h1>
+
+    <!-- Local Storage -->
+    <div>
+        <h2>Local Storage</h2>
+        <label for="localData">Enter data to store in Local Storage:</label>
+        <input type="text" id="localData">
+        <button onclick="saveLocalStorage()">Save to Local Storage</button>
+        <button onclick="showLocalStorage()">Show Local Storage Data</button>
+        <button onclick="clearLocalStorage()">Clear Local Storage</button>
+        <p id="localOutput"></p>
+    </div>
+
+    <!-- Session Storage -->
+    <div>
+        <h2>Session Storage</h2>
+        <label for="sessionData">Enter data to store in Session Storage:</label>
+        <input type="text" id="sessionData">
+        <button onclick="saveSessionStorage()">Save to Session Storage</button>
+        <button onclick="showSessionStorage()">Show Session Storage Data</button>
+        <button onclick="clearSessionStorage()">Clear Session Storage</button>
+        <p id="sessionOutput"></p>
+    </div>
+
+    <script>
+        // Local Storage
+        function saveLocalStorage() {
+            const data = document.getElementById('localData').value;
+            localStorage.setItem('localData', data);
+            localStorage.setItem('city',"Bengaluru");
+            localStorage.setItem('country',"India");
+            alert('Data saved to Local Storage.');
+        }
+
+        function showLocalStorage() {
+            const data = localStorage.getItem('localData');
+            const city=localStorage.getItem('city');
+            const country=localStorage.getItem('country');
+            document.getElementById('localOutput').textContent = data ? `Stored Data: ${data}-${city}=${country}` : 'No data in Local Storage.';
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('localData');
+            document.getElementById('localOutput').textContent = 'Local Storage cleared.';
+        }
+
+        // Session Storage
+        function saveSessionStorage() {
+            const data = document.getElementById('sessionData').value;
+            sessionStorage.setItem('sessionData', data);
+            alert('Data saved to Session Storage.');
+        }
+
+        function showSessionStorage() {
+            const data = sessionStorage.getItem('sessionData');
+            document.getElementById('sessionOutput').textContent = data ? `Stored Data: ${data}` : 'No data in Session Storage.';
+        }
+
+        function clearSessionStorage() {
+            sessionStorage.removeItem('sessionData');
+            document.getElementById('sessionOutput').textContent = 'Session Storage cleared.';
+        }
+    </script>
+</body>
+</html>
