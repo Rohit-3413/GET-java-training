@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb ON / OFF Event Handling using addEventListener</title>
+    <script>
+        function onOff1()
+        {
+         var txt1 = document.getElementById("left");
+		var txt2 = document.getElementById("right");
+		var txt = txt1.src;
+		txt1.src = txt2.src;
+		txt2.src = txt;
+        }
+        
+        function onOff2()
+        {
+            var txt1 = document.getElementById("right");
+		var txt2 = document.getElementById("left");
+		var txt = txt1.src;
+		txt1.src = txt2.src;
+		txt2.src = txt;
+        }
+    </script>
+</head>
+ 
+    <body style="background-color: rgb(165, 240, 215);">
+
+    <h1 style="text-align: center;">Switch Bulb - ON / OFF</h1>
+    <img src="https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940208oq66nq8jew.png"
+    alt="" style="width: 150px;float:left" data-embed="true" id="left"
+    onclick="onOff1()">
+    <img src="https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940319kdxsp3rf0i.png" 
+    alt="" style="width: 150px;float:right" data-embed="true" id="right"  
+    onclick="onOff2()">
+
+    <br>
+    <button id="btn1">Coforge</button>
+    <button class="btn2">BICT</button>
+    <script>
+        btn1.addEventListener("click", function(){alert("Iam in Board room")}); //Annonymous fun
+        btn1.addEventListener("click",hello ); //function
+
+        function hello(){
+            alert("Hello World from 16th Floor");
+        }
+
+        document.write("<h1 style='color:red;'>Hello World<h1>")
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Validation</title>
+    <style>
+        /* CSS3 Styling */
+        :root {
+            --primary-color: #4285f4;
+            --error-color: #ea4335;
+            --success-color: #34a853;
+            --border-color: #ddd;
+            --light-gray: #f9f9f9;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .registration-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: var(--light-gray);
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+            background-color: white;
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .error input, .error select {
+            border-color: var(--error-color);
+        }
+        
+        .success input {
+            border-color: var(--success-color);
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #3367d6;
+        }
+        
+        .password-strength {
+            height: 4px;
+            background-color: #eee;
+            margin-top: 8px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .strength-meter {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s, background-color 0.3s;
+        }
+        
+        .terms-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .terms-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .terms-group label {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .registration-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="registration-container">
+        <h1>Create an Account</h1>
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required minlength="3" maxlength="50" autofocus>
+                <div class="error-message">Please enter your full name (3-50 characters)</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$">
+                <div class="password-strength">
+                    <div class="strength-meter" id="passwordStrength"></div>
+                </div>
+                <div class="error-message">Password must be at least 8 characters with uppercase, lowercase, and number</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error-message">Passwords do not match</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number">
+                <div class="error-message">Please enter a valid 10-digit phone number</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required max="2005-12-31">
+                <div class="error-message">You must be at least 18 years old</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="IN">India</option>
+                </select>
+                <div class="error-message">Please select your country</div>
+            </div>
+            
+            <div class="terms-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms and Conditions</label>
+                <div class="error-message" style="position: absolute; bottom: -20px; left: 0;">You must accept the terms</div>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        // Field-level validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const passwordStrength = document.getElementById('passwordStrength');
+            
+            // Real-time password strength indicator
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = 0;
+                
+                // Length check
+                if (password.length >= 8) strength += 1;
+                // Contains lowercase
+                if (/[a-z]/.test(password)) strength += 1;
+                // Contains uppercase
+                if (/[A-Z]/.test(password)) strength += 1;
+                // Contains number
+                if (/\d/.test(password)) strength += 1;
+                // Contains special char
+                if (/[^a-zA-Z0-9]/.test(password)) strength += 1;
+                
+                // Update strength meter
+                const width = strength * 20;
+                let color;
+                
+                if (strength <= 1) color = '#ea4335'; // Weak (red)
+                else if (strength <= 3) color = '#fbbc05'; // Medium (yellow)
+                else color = '#34a853'; // Strong (green)
+                
+                passwordStrength.style.width = width + '%';
+                passwordStrength.style.backgroundColor = color;
+            });
+            
+            // Confirm password validation
+            confirmPasswordInput.addEventListener('input', function() {
+                if (this.value !== passwordInput.value) {
+                    this.parentElement.classList.add('error');
+                    this.nextElementSibling.style.display = 'block';
+                } else {
+                    this.parentElement.classList.remove('error');
+                    this.nextElementSibling.style.display = 'none';
+                }
+            });
+            
+            // Field validation on blur
+            const fields = form.querySelectorAll('input, select');
+            fields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                fields.forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+                
+                // Special check for password match
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    confirmPasswordInput.parentElement.classList.add('error');
+                    confirmPasswordInput.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    alert('Registration successful!');
+                    // form.submit(); // Uncomment to actually submit the form
+                } else {
+                    // Scroll to first error
+                    const firstError = form.querySelector('.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+            
+            // Field validation function
+            function validateField(field) {
+                const errorMessage = field.parentElement.querySelector('.error-message');
+                
+                // Check required fields
+                if (field.required && !field.value.trim()) {
+                    field.parentElement.classList.add('error');
+                    errorMessage.style.display = 'block';
+                    return false;
+                }
+                
+                // Check pattern validation
+                if (field.pattern && field.value) {
+                    const regex = new RegExp(field.pattern);
+                    if (!regex.test(field.value)) {
+                        field.parentElement.classList.add('error');
+                        errorMessage.style.display = 'block';
+                        return false;
+                    }
+                }
+                
+                // Check min/max length
+                if (field.minLength && field.value.length < field.minLength) {
+                    field.parentElement.classList.add('error');
+                    errorMessage.style.display = 'block';
+                    return false;
+                }
+                
+                // Check max date (for age verification)
+                if (field.type === 'date' && field.max && field.value > field.max) {
+                    field.parentElement.classList.add('error');
+                    errorMessage.style.display = 'block';
+                    return false;
+                }
+                
+                // Check email format
+                if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        field.parentElement.classList.add('error');
+                        errorMessage.style.display = 'block';
+                        return false;
+                    }
+                }
+                
+                // If all validations pass
+                field.parentElement.classList.remove('error');
+                errorMessage.style.display = 'none';
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Events</title>
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+      <h2>Shopping Cart - Event Handling</h2>
+
+  <!-- Event: onchange -->
+  <label for="product">Choose a product:</label>
+  <select id="product">
+    <option value="Laptop">Laptop</option>
+    <option value="Mobile">Mobile</option>
+    <option value="Headphones">Headphones</option>
+  </select>
+  <br><br>
+
+  <!-- Event: onmouseover & onmouseout -->
+  <input type="text" id="quantity" placeholder="Enter quantity" 
+         onmouseover="highlight(this)" onmouseout="removeHighlight(this)">
+  <br><br>
+
+  <!-- Event: onclick -->
+  <button id="addToCartBtn">Add to Cart</button>
+
+  <h3>Cart Details:</h3>
+  <div id="cart"></div>
+
+  <script>
+    // Event: onchange (when product is selected)
+    document.getElementById("product").addEventListener("change", function () {
+      alert("You selected: " + this.value);
+    });
+
+    // Event: onclick (when button is clicked)
+    document.getElementById("addToCartBtn").addEventListener("click", addToCart); 
+     document.getElementById("addToCartBtn").addEventListener("click", test); 
+
+    // Functions for onmouseover & onmouseout
+    function highlight(inputBox) {
+      inputBox.style.backgroundColor = "lightyellow";
+    }
+
+    function removeHighlight(inputBox) {
+      inputBox.style.backgroundColor = "white";
+    }
+
+     function addToCart(){
+         const product = document.getElementById("product").value;
+      const quantity = document.getElementById("quantity").value;
+
+      if (quantity === "" || quantity <= 0 ) {
+        alert("Please enter a valid quantity!");
+        return;
+      }
+
+      document.getElementById("cart").innerHTML += 
+        `<p>Added ${quantity} × ${product} to cart</p>`;
+    }
+
+    function test()
+    {
+        alert("THANKS FOR SHOPPING");
+    }
+
+  </script>
+</body>
+</html>

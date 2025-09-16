@@ -1,0 +1,132 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #b7e7de, #f52b2b);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Calculator container */
+table {
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  border: none;
+  animation: fadeIn 1s ease-in-out;
+  margin: auto;
+}
+
+/* Calculator Title Styling */
+.title {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Arial Black', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+  animation: bounceIn 1s ease-in-out;
+}
+
+/* Text Glow Effect */
+.title:hover {
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ff9800, 0 0 30px #ff5722;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Title Animation */
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+
+/* Display box */
+#edu {
+  width: 100%;
+  height: 50px;
+  text-align: right;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  background: #333;
+  color: #0f0;
+  outline: none;
+  box-shadow: inset 0 0 10px #000;
+}
+
+/* Buttons styling */
+input[type="button"] {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #444;
+  color: white;
+  box-shadow: 0 4px #111;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+input[type="button"]:hover {
+  background: #666;
+  transform: scale(1.05);
+}
+
+/* Active/pressed effect */
+input[type="button"]:active {
+  background: #0f0;
+  color: black;
+  box-shadow: 0 2px #000;
+  transform: scale(0.95);
+}
+
+/* Special styling for operator buttons */
+input[value="+"],
+input[value="-"],
+input[value="*"],
+input[value="/"],
+input[value="c"],
+input[value="="] {
+  background: #ff9800;
+  color: #fff;
+  box-shadow: 0 4px #b36b00;
+}
+
+input[value="+"]:hover,
+input[value="-"]:hover,
+input[value="*"]:hover,
+input[value="/"]:hover,
+input[value="c"]:hover,
+input[value="="]:hover {
+  background: #ffb84d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
