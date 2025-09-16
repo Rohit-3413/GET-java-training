@@ -1,0 +1,8 @@
+package tollboothassignment;
+
+
+public interface TollBooth {
+	 void calculateToll(Truck t);
+	 void displayData();
+	 void collectReceipts();
+}

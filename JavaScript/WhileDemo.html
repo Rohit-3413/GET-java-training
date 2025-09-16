@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Demo</title>
+</head>
+<body>
+    <H1>Looping</H1>
+    <p> A set of statements executing repeatedly, until a particular 
+        condition is TRUE is called Looping. If we want to perform certain tasks
+         again & again we should use Loop</p>
+        <p> A Loop should be :</p>
+        <ul>
+            <li>Intialized</li>
+            <li>Set a Condition</li>
+            <li>Increament / Decreament</li>
+        </ul>
+    <script>
+    var i = 1; // Loop initialization
+    while(i <= 10) {     // set a condition -> How many times Loop should execute
+        document.write("<p>The number is " + i + " Rohit"+"</p>");
+        console.log(i);
+        i++;  // Increment Loop
+    }
+
+    document.writeln("<br><hr><br>");
+    var j = 10;  // reverse Loop
+    while(j >= 1) {    
+        document.write("<p>The number is " + j + " Rohit"+"</p>");
+       j--; // decrement the Loop
+    }
+    </script>
+
+    <h2>Include External JS</h2>
+    <hr>
+    <script src="hello.js"></script>
+</body>
+</html>

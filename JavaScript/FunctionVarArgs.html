@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Args in JS Functions</title>
+    <script>
+        // Defining function which takes variable no. of Arguments
+
+        function Sum() {
+            var ans = 0;
+            var len = Sum.arguments.length; // arguments is inbuilt array
+            for( i = 0; i< len; i++) {
+                ans += Sum.arguments[i];
+            }
+            document.writeln("The Sum Is : "+ans);
+        }
+    </script>
+</head>
+<body>
+    <h1>JS Function with Variable Number of Arguements</h1>
+    <script>
+        Sum(10, 20);
+        //Ctrl + / -> shortcut for single line comments
+        //Indentation - Shift + Alt + F
+        document.write("<br>");
+        Sum(10.60, 12.55);
+        document.write("<br>");
+        Sum(10, 12.55);
+        document.write("<br>");
+        Sum(10, 20, 30, 40);
+        document.write("<br>");
+        Sum(10, 20, 30, 40, 50, 60, 100)
+    </script>
+</body>
+</html>

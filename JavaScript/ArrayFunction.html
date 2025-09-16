@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions</title>
+</head>
+<body>
+     <h1>Arrays Functions</h1>
+
+    <pre>
+<SCRIPT LANGUAGE="JavaScript">   
+var fruits = ['apple','orange','kiwi'];
+alert (fruits[1]);
+
+document.write("The Size of array \'fruits\' is : "+ fruits.length+'<br>');
+document.write(fruits);
+// add elements to end of array
+fruits[3]='banana';
+fruits[fruits.length]='cherry';
+fruits.push('grape');
+
+// add elements to begining of array
+fruits.unshift('blackberry');
+
+document.write('<br>'+"-------------------------------------------------"+'<br>')
+// iteration tru arrays in js
+document.write("The Array contents are: "+'<br>');
+
+for(i=0;i<fruits.length;i++)
+{
+ document.write(fruits[i]);
+ document.write('<BR/>');
+}
+
+document.write('<br>'+"-------------------------------------------------"+'<br>')
+document.write("The Array contents after sorting : "+'<br>');
+fruits.sort();
+
+// for in loop -- iterate tru arrays/objects 
+var text='';
+for(var i in fruits) //For In Loop
+{ 
+  text+= fruits[i];
+  text+= '<br>';
+  document.writeln(fruits[i]);
+}
+
+document.writeln("<br>"+text);
+
+//removing elements
+document.write('<br>'+"-------------------------------------------------"+'<br>')
+document.write('<br>'+"The Array contents after removing some elements : "+'<br>')
+fruits.pop();  // remove elemnts from end of array
+fruits.shift(); // ,,     ,,       ,, begining ,,
+
+for(i=0;i<fruits.length;i++)
+{
+ document.write(fruits[i]);
+ document.write('<BR/>');
+}
+
+document.write('<br>'+"-------------------------------------------------"+'<br>')
+
+var arr = [true, 2, 3, "4","Hello","hello"];
+document.write('<br>'+"The Array contents before reversing elements : "+'<br>')
+document.write('<br>'+arr);
+document.write('<br>'+"The Array contents after reversing elements : "+'<br>')
+new_array = arr.reverse()
+document.write('<br>'+new_array);
+
+document.write('<br>'+"-------------------------------------------------"+'<br>');
+document.write('<br>'+"The Array contents after concatinating : "+'<br>');
+new_array = arr.concat(5, 6, 7)
+
+document.write('<br>'+new_array);
+console.log(new_array); 
+
+//slice creates a copy of the array and extracts a subsequence of it. 
+document.write('<br>'+"-------------------------------------------------"+'<br>');
+var arr1 = [23,56,87,32,75,13]; 
+  
+    //Extracted array 
+    var new_arr1 = arr1.slice(2,5); 
+    document.write(arr1); 
+    document.write("<br>"); 
+document.write('<br>'+"The Array contents after slicing : "+'<br>');
+document.write('<br>'+new_arr1);
+   
+console.log(new_array);  
+console.log("End");  
+
+</SCRIPT> 
+</pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Demo</title>
+</head>
+<body>
+     <h1>Factorial Using For Loop</h1>
+    <hr>
+    <script>
+        var fact=1;
+
+        var num=parseInt(prompt("Enter a Number :"));
+        for(i=1;i<=num;i++){
+            fact=fact*i
+        }
+        // Different way to display JS Variable values
+        //Template Literals - Embed Variables in a String - Use Back Quote operator
+        document.write(`The Factorial of ${num} is :`+fact.toFixed(2));
+        document.write("<br>The Factorial of "+num+" is :"+fact.toFixed(2));
+
+        var num1=100,num2=200;
+        //Use template Literals for String Interpolation & in Expressions
+        document.writeln(`<br>The Sum of ${num1} and ${num2} is : ${num1 + num2}`);
+     </script>
+</body>
+</html>

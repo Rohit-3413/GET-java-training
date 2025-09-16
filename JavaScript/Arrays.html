@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+     <h1> Arrays</h1>
+    <pre>
+   <script>
+       var marks=[75,20,85,30]; // array of numbers
+
+       var stringArray=['eat','work','sleep']; // array of Strings
+
+       var mixArray=["Java","Java Script",200,true]; // array of Mixed Type
+       
+        document.writeln("Integer Array Contents :"+marks);
+        document.writeln("String Array Contents :"+stringArray);
+        document.writeln("Mixed Type Array Contents :"+mixArray);
+
+        document.writeln("<hr>");
+       // access a array element
+       document.writeln("Accessing array element in \"4th\" position:"+mixArray[3]);
+       // add element to array in the tail
+       mixArray.push(500);
+       
+       document.writeln("Display array after push() :"+mixArray);
+     
+       // add element to array on the top
+       mixArray.unshift(222);
+       document.writeln("Array after unshift : "+mixArray);
+
+       document.writeln("Array Contents :")
+       for(i=0;i<mixArray.length;i++)
+       {
+        document.writeln(mixArray[i]);
+       }
+       // display size of array using length property
+       document.writeln("The Size of Integer Array Marks :" +
+                    marks.length);
+       </script>
+       </pre>
+</body>
+</html>

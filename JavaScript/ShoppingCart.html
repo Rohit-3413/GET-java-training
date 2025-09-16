@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo - Conditionals, Loops, Arrays & Functions</title>
+</head>
+<body>
+    <h2>Shopping Cart Example</h2>
+  <pre id="output"></pre>
+
+  <script>
+    // Function to calculate total price
+    function calculateTotal(cart) {
+      let total = 0;
+
+      // Loop through array (cart items)
+      for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].quantity;
+      }
+
+      return total;
+    }
+
+    // Function to apply discount based on conditions
+    function applyDiscount(total) {
+      let discount = 0;
+
+      // Conditional statements
+      if (total >= 5000) {
+        discount = 0.20; // 20% discount
+      } else if (total >= 2000) {
+        discount = 0.10; // 10% discount
+      } else if (total >= 1000) {
+        discount = 0.05; // 5% discount
+      } else {
+        discount = 0; // No discount
+      }
+
+      return total - (total * discount);
+    }
+
+    // Real-world example: shopping cart array of objects
+    const shoppingCart = [
+      { item: "Laptop", price: 45000, quantity: 1 },
+      { item: "Mouse", price: 500, quantity: 2 },
+      { item: "Keyboard", price: 1500, quantity: 1 },
+      { item: "USB Cable", price: 200, quantity: 3 }
+    ];
+
+    // Call functions
+    let totalAmount = calculateTotal(shoppingCart);
+    let finalAmount = applyDiscount(totalAmount);
+
+    // Display output
+    let output = "Shopping Cart Items:\n";
+    for (let i = 0; i < shoppingCart.length; i++) {
+      output += `${shoppingCart[i].item} - Qty: ${shoppingCart[i].quantity}, Price: ₹${shoppingCart[i].price}\n`;
+    }
+
+    output += `\nTotal Amount: ₹${totalAmount}`;
+    output += `\nFinal Amount after Discount: ₹${finalAmount}`;
+
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Functions</title>
+    <script>
+
+        // Define Functions
+        function sum(num1, num2){
+            var total = num1 + num2;
+            document.write(`The Addition of ${num1} and ${num2} is : `+total);
+        }
+
+        // Function with Return Statement
+        function getRectArea(width, height)
+        {
+            if(width > 0 && height > 0)
+        {
+            return width * height;
+        }
+        return 0;
+     }
+  </script>
+</head>
+<body>
+    <h1 style="color: blue;">Java Script Functions Demo</h1>
+    <hr>
+
+    <script>
+        // Function Call
+        sum(10,20);
+        document.write("<br>");
+         sum(300,450);
+        document.write("<br>");
+         sum(-5,25);
+
+    </script>
+
+    <h1 style="color: blue;" > Java Script Fucntion with Return Statement</h1>
+
+    <script>
+        var area = getRectArea(10,20); //Function call
+        document.write("<br>The Area of Rectangle is : "+area);
+        document.write("<br>The Area of Rectangle is : "+getRectArea(15,0));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Demo</title>
+</head>
+<body>
+      <h1>For Loop</h1>
+    <script>
+    for(var i=1; i<=10; i++) {
+      if(i==3) { continue;}
+      document.write("<p>The number is " + i + "</p>");
+    }
+    document.write("<hr>");
+    for(var i=1; i<=10; i++) {
+      if(i %2==1)
+      document.write("<p>The Odd number is " + i + "</p>");
+    }
+  
+    document.write("<hr>");
+    document.write("ODD&emsp;&emsp;EVEN");
+    document.write("<br>*************");
+    for(i=1;i<=10;i++){
+      if(i===10) { break;} // strict comparison of values considering the datatype also.
+      if(i%2==1){
+        document.write("<br>"+i);
+      }
+      else{
+        document.write("&emsp;&emsp;&emsp;&emsp;"+i);
+      }
+    }
+    </script>
+</body>
+</html>
