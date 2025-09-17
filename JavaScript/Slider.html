@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider-container {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        
+        .slider-btn {
+            background: rgba(255,255,255,0.5);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .slider-btn:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <!-- Slides will be added by JavaScript -->
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn">❮</button>
+            <button class="slider-btn next-btn">❯</button>
+        </div>
+        
+        <div class="slider-dots">
+            <!-- Dots will be added by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+     
+
+const images = [
+    "https://picsum.photos/600/400?random=1",
+    "https://picsum.photos/600/400?random=2",
+    "https://picsum.photos/600/400?random=3",
+    "https://picsum.photos/600/400?random=4",
+    "https://picsum.photos/600/400?random=5"
+];
+
+        // DOM elements
+        const slider = document.querySelector('.slider');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dotsContainer = document.querySelector('.slider-dots');
+
+        let currentSlide = 0;
+
+        // Create slides
+        function createSlides() {
+            images.forEach((img, index) => {
+                // Create slide
+                const slide = document.createElement('div');
+                slide.classList.add('slide');
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                imgElement.alt = `Slide ${index + 1}`;
+                
+                slide.appendChild(imgElement);
+                slider.appendChild(slide);
+                
+                // Create dot
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.dataset.index = index;
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Set first dot as active
+            updateDots();
+        }
+
+        // Update dots
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Go to slide
+        function goToSlide(slideIndex) {
+            slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+            currentSlide = slideIndex;
+            updateDots();
+        }
+
+        // Next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % images.length;
+            goToSlide(currentSlide);
+        }
+
+        // Previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + images.length) % images.length;
+            goToSlide(currentSlide);
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Dot navigation
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dot')) {
+                const slideIndex = parseInt(e.target.dataset.index);
+                goToSlide(slideIndex);
+            }
+        });
+
+        // Auto slide (optional)
+        let slideInterval = setInterval(nextSlide, 3000);
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 3000);
+        });
+
+        // Initialize slider
+        createSlides();
+    </script>
+</body>
+</html>

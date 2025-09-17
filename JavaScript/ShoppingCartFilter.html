@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous & Arrow Functions Example with Timestamps</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #cart, #filterResult, #discounts, #reminder, #intervalLogs {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: aquamarine;
+    }
+    p {
+      margin: 5px 0;
+    }
+    .time {
+      color: gray;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  
+  <h2>Shopping Cart Example</h2>
+  <button id="addToCartBtn">Add Item to Cart</button>
+  <div id="cart"></div>
+
+  <h2>Filter Example</h2>
+  <p id="filterResult"></p>
+
+  <h2>Discounted Prices</h2>
+  <div id="discounts"></div>
+
+  <h2>Reminders</h2>
+  <div id="reminder"></div>
+
+  <h2>Cart Checking Logs</h2>
+  <div id="intervalLogs"></div>
+
+  <script>
+    // Utility function for timestamps
+    function getCurrentTime() {
+      return new Date().toLocaleTimeString();
+    }
+
+    // 1. Anonymous Function (used in Event Listener)
+    document.getElementById("addToCartBtn").addEventListener("click", function () {
+      let cartDiv = document.getElementById("cart");
+      cartDiv.innerHTML += `<p>🛒 Item added to cart! <span class="time">(${getCurrentTime()})</span></p>`;
+    });
+
+    // 2. Arrow Function (used in array filter)
+    let prices = [120, 50, 300, 80, 200];
+    
+    // Filter expensive items (>100) using arrow function
+    let expensiveItems = prices.filter(price => price > 100);
+
+    document.getElementById("filterResult").innerHTML =
+      `Expensive items (greater than 100): ${expensiveItems.join(", ")} 
+      <span class="time">(${getCurrentTime()})</span>`;
+
+    // 3. Arrow Function with map() (real time - applying discount)
+    let discountedPrices = prices.map(price => price * 0.9);
+    document.getElementById("discounts").innerHTML =
+      `Discounted Prices (10% off): ${discountedPrices.join(", ")} 
+      <span class="time">(${getCurrentTime()})</span>`;
+
+    // 4. Anonymous function in setTimeout
+    setTimeout(function () {
+      document.getElementById("reminder").innerHTML =
+        `⏰ Reminder: Don’t forget to checkout your cart! 
+        <span class="time">(${getCurrentTime()})</span>`;
+    }, 3000);
+
+    // 5. Arrow function in setInterval
+    let count = 0;
+    let interval = setInterval(() => {
+      count++;
+      document.getElementById("intervalLogs").innerHTML +=
+        `<p>Cart checked ${count} times <span class="time">(${getCurrentTime()})</span></p>`;
+      if (count === 3) clearInterval(interval);
+    }, 2000);
+  </script>
+</body>
+</html>

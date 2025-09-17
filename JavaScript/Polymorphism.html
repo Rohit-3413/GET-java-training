@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism</title>
+</head>
+<body>
+     <h1>Polymorphism - Overriding</h1>
+
+    <script>
+        class Shape{
+
+            calculateArea(){
+                document.write("********** Calculating Area of Shape **********<br>");
+                return 0;
+            }
+
+            toString(){
+                return Object.getPrototypeOf(this).constructor.name;
+            }
+        }
+
+        class Circle extends Shape{
+            #radius;
+            constructor(radius){
+                super();
+                this.radius = radius;
+            }
+            //overridden method
+            calculateArea(){
+                document.write("Area of Circle is : ");
+                return Math.PI * this.radius * 2;
+            }
+        }
+
+        class Rectangle extends Shape{
+            #widht;
+            #height;
+            constructor(width,height){
+                super();
+               this.width=width;
+               this.height=height;
+            }
+            //overridden method
+            calculateArea(){
+                document.write("Area of Rectangle is : ");
+                return this.width * this.height;
+            }
+        }
+
+        var s=new Shape();
+        var c1 = new Circle(5.5);
+        var r1 = new Rectangle(4,6);
+
+        document.write(s.calculateArea()+"-"+ s.toString()+"<br>");
+        document.write(c1.calculateArea()+"-"+ c1.toString()+"<br>");
+        document.write(r1.calculateArea()+"-"+ r1.toString()+"<br>");
+    </script>
+</body>
+</html>

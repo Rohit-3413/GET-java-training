@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input, textarea, button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 300px;
+    }
+
+    #status {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #333;
+      width: 320px;
+      background: #f9f9f9;
+    }
+
+    .highlight {
+      border: 2px solid orange;
+      background: #fff7e6;
+    }
+
+    #infoBox {
+      margin-top: 20px;
+      padding: 20px;
+      background: lightblue;
+      width: 300px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+
+</head>
+<body>
+    <h1>Customer Feedback Form</h1>
+
+  <input type="text" id="name" placeholder="Enter your name">
+  <textarea id="feedback" placeholder="Enter feedback"></textarea>
+  <button id="submitBtn">Submit</button>
+
+  <div id="status">Waiting for input...</div>
+
+  <!-- Mouse event demo -->
+  <div id="infoBox">Hover or Double-Click Me!</div>
+
+  <script>
+    $(document).ready(function () {
+      // -------------------------------
+      // FORM EVENTS
+      // -------------------------------
+      // Click Event
+      $("#submitBtn").click(function () {
+        const name = $("#name").val();
+        const feedback = $("#feedback").val();
+
+        if (name === "" || feedback === "") {
+          $("#status").text("⚠️ Please fill in all fields!").css("color", "red");
+        } else {
+          $("#status").text("✅ Thank you, " + name + "! Your feedback has been submitted.")
+                      .css("color", "green");
+        }
+      });
+
+      // Focus Event
+      $("input, textarea").focus(function () {
+        $(this).addClass("highlight");
+      });
+
+      // Blur Event
+      $("input, textarea").blur(function () {
+        $(this).removeClass("highlight");
+      });
+
+      // Keypress Event (detects each key pressed inside Name field)
+      $("#name").keypress(function (event) {
+        $("#status").text("Key pressed: " + event.key);
+      });
+
+      // Change Event
+      $("#feedback").change(function () {
+        $("#status").text("Feedback updated!");
+      });
+
+      // -------------------------------
+      // MOUSE EVENTS
+      // -------------------------------
+      $("#infoBox").hover(
+        function () {
+          $(this).css("background", "lightgreen").text("You are hovering over me!");
+        },
+        function () {
+          $(this).css("background", "lightblue").text("Hover or Double-Click Me!");
+        }
+      );
+
+      $("#infoBox").mouseenter(function () {
+        $("#status").text("Mouse entered the info box!");
+      });
+
+      $("#infoBox").mouseleave(function () {
+        $("#status").text("Mouse left the info box!");
+      });
+
+      $("#infoBox").dblclick(function () {
+        $(this).css("background", "orange").text("You double-clicked me!");
+        $("#status").text("Box was double-clicked!");
+      });
+    });
+  </script>
+</body>
+</html>

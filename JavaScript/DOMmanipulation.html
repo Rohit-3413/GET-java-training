@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods Demonstration</title>
+     <style>
+        .highlight { background-color: yellow; }
+        .box { 
+            width: 100px; 
+            height: 100px; 
+            background-color: lightblue;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Methods Demonstration</h1>
+    
+    <div id="container">
+        <p class="paragraph">First paragraph</p>
+        <p class="paragraph">Second paragraph</p>
+        <p class="paragraph">Third paragraph</p>
+    </div>
+    
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+    <button id="addBtn">Add Element</button>
+    <button id="removeBtn">Remove Element</button>
+    <button id="toggleBtn">Toggle Class</button>
+    <button id="changeBtn">Change Content</button>
+    
+    <div id="output"></div>
+    
+    <script>
+        // Document Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== Selecting Elements =====
+            // getElementById
+            const container = document.getElementById('container');
+            console.log('Container:', container);
+            
+            // getElementsByClassName
+            const paragraphs = document.getElementsByClassName('paragraph');
+            console.log('Paragraphs:', paragraphs);
+            
+            // getElementsByTagName
+            const listItems = document.getElementsByTagName('li');
+            console.log('List Items:', listItems);
+            
+            // querySelector (first matching element)
+            const firstParagraph = document.querySelector('.paragraph');
+            console.log('First Paragraph:', firstParagraph);
+            
+            // querySelectorAll (all matching elements)
+            const allParagraphs = document.querySelectorAll('.paragraph');
+            console.log('All Paragraphs:', allParagraphs);
+            
+            // ===== Modifying Elements =====
+            // Changing text content
+            firstParagraph.textContent = 'Modified first paragraph';
+            
+            // Changing HTML content
+            paragraphs[1].innerHTML = '<strong>Bold</strong> second paragraph';
+            
+            // Changing attributes
+            container.setAttribute('data-custom', 'example-value');
+            console.log('Custom attribute:', container.getAttribute('data-custom'));
+            
+            // Changing styles
+            paragraphs[2].style.color = 'red';
+            paragraphs[2].style.fontSize = '20px';
+            
+            // ===== Adding/Removing Elements =====
+            const addBtn = document.getElementById('addBtn');
+            const removeBtn = document.getElementById('removeBtn');
+            const list = document.getElementById('list');
+            const output = document.getElementById('output');
+            
+            // Adding new element
+            addBtn.addEventListener('click', function() {
+                const newItem = document.createElement('li');
+                newItem.textContent = 'Item ' + (list.children.length + 1);
+                list.appendChild(newItem);
+                
+                output.textContent = 'Added new list item';
+            });
+            
+            // Removing element
+            removeBtn.addEventListener('click', function() {
+                if (list.children.length > 0) {
+                    const lastItem = list.lastElementChild;
+                    list.removeChild(lastItem);
+                    output.textContent = 'Removed last list item';
+                } else {
+                    output.textContent = 'No items to remove';
+                }
+            });
+            
+            // ===== Class Manipulation =====
+            const toggleBtn = document.getElementById('toggleBtn');
+            
+            toggleBtn.addEventListener('click', function() {
+                Array.from(paragraphs).forEach(p => {
+                    p.classList.toggle('highlight');
+                });
+                
+                output.textContent = 'Toggled highlight class on paragraphs';
+            });
+            
+            // ===== Event Handling =====
+            const changeBtn = document.getElementById('changeBtn');
+            
+            changeBtn.addEventListener('click', function() {
+                const newDiv = document.createElement('div');
+                newDiv.className = 'box';
+                newDiv.textContent = list.children.length;
+                
+                // Event delegation example
+                newDiv.addEventListener('click', function() {
+                    this.style.backgroundColor = 
+                        this.style.backgroundColor === 'lightgreen' ? 'lightblue' : 'lightgreen';
+                });
+                
+                document.body.appendChild(newDiv);
+                output.textContent = 'Added a new box (click it to change color)';
+            });
+            
+            // ===== Traversing the DOM =====
+            console.log('Parent of list:', list.parentNode);
+            console.log('Children of container:', container.children);
+            console.log('First child of container:', container.firstElementChild);
+            console.log('Next sibling of first paragraph:', 
+                        firstParagraph.nextElementSibling);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selectors</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function() {
+            $("#h").click(function() {
+                $(".test").hide();
+            });
+            $("#s").click(function() {
+                $(".test").show();
+            });
+            $("#t").click(function() {
+                $(".test").toggle();
+            });
+        })
+      </script>
+</head>
+<body>
+    <h2 class="test">This is a heading</h2>
+<p class="test">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button id="h">Hide</button>
+<button id="s">Show</button>
+<button id="t">Toggle</button>
+</body>
+</html>

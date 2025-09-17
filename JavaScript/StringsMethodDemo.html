@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    p {
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+     <h2>JavaScript String Methods Demo</h2>
+  <div id="output"></div>
+
+  <script>
+    let output = document.getElementById("output");
+
+    let text = "   JavaScript String Methods Demo   ";
+
+    // 1. length
+    output.innerHTML += `<p><b>1. Length:</b> ${text.length}</p>`;
+
+    // 2. trim()
+    output.innerHTML += `<p><b>2. Trim:</b> "${text.trim()}"</p>`;
+
+    // 3. toUpperCase()
+    output.innerHTML += `<p><b>3. Uppercase:</b> ${text.toUpperCase()}</p>`;
+
+    // 4. toLowerCase()
+    output.innerHTML += `<p><b>4. Lowercase:</b> ${text.toLowerCase()}</p>`;
+
+    // 5. slice(start, end)
+    output.innerHTML += `<p><b>5. Slice (0,10):</b> ${text.slice(0, 10)}</p>`;
+
+    // 6. substring(start, end)
+    output.innerHTML += `<p><b>6. Substring (3,13):</b> ${text.substring(3, 13)}</p>`;
+
+    // 7. replace()
+    output.innerHTML += `<p><b>7. Replace "Demo" with "Example":</b> ${text.replace("Demo", "Example")}</p>`;
+
+    // 8. includes()
+    output.innerHTML += `<p><b>8. Includes "String"?:</b> ${text.includes("String")}</p>`;
+
+    // 9. split()
+    let words = text.trim().split(" ");
+    output.innerHTML += `<p><b>9. Split into words:</b> ${words.join(" | ")}</p>`;
+
+    // 10. charAt()
+    output.innerHTML += `<p><b>10. Character at index 5:</b> ${text.charAt(5)}</p>`;
+
+    // 11. indexOf()
+    output.innerHTML += `<p><b>11. Index of "Script":</b> ${text.indexOf("Script")}</p>`;
+
+    // 12. concat()
+    let newText = text.trim().concat(" - Learn Easily!");
+    output.innerHTML += `<p><b>12. Concat:</b> ${newText}</p>`;
+  </script>
+</body>
+</html>

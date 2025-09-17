@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event & Slide Effect in jQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+<style>
+    p{
+        padding: 20px;
+        font: 20px sans-serif;
+        background: khaki;
+        display: none;
+    }
+    #flip,  #flip1{
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;}
+</style>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("p").slideDown();
+    });
+
+    $("#flip1").click(function(){
+        $("p").slideUp();
+    });
+});
+</script>
+
+</head>
+<body>
+    <div id="flip">Jquery Info- Slide Down</div>
+    <p>jQuery is a JS Library</p>
+    <p>DOM Traversal & Manipulation & DOM CSS</p>
+    <p>Events & Effects</p>
+
+    <div id="flip1">Exit Jquery Info- Slide Up</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Normal vs Arrow Functions</title>
+</head>
+<body>
+
+ <h2>Normal Function vs Arrow Function Examples</h2>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // 1. Add two numbers
+    function addNormal(a, b) {
+      return a + b;
+    }
+    const addArrow = (a, b) => a + b;
+
+    output.innerHTML += `<p>1. Add (Normal): ${addNormal(5, 10)}</p>`;
+    output.innerHTML += `<p>1. Add (Arrow): ${addArrow(5, 10)}</p>`;
+
+    // 2. Square of a number
+    function squareNormal(n) {
+      return n * n;
+    }
+    const squareArrow = n => n * n;
+
+    output.innerHTML += `<p>2. Square (Normal): ${squareNormal(6)}</p>`;
+    output.innerHTML += `<p>2. Square (Arrow): ${squareArrow(6)}</p>`;
+
+    // 3. Greeting
+    function greetNormal() {
+      return "Hello from Normal Function!";
+    }
+    const greetArrow = () => "Hello from Arrow Function!";
+
+    output.innerHTML += `<p>3. ${greetNormal()}</p>`;
+    output.innerHTML += `<p>3. ${greetArrow()}</p>`;
+
+    // 4. Array filter example
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    let evenNormal = numbers.filter(function(num) {
+      return num % 2 === 0;
+    });
+    let evenArrow = numbers.filter(num => num % 2 === 0);
+
+    output.innerHTML += `<p>4. Even Numbers (Normal): ${evenNormal.join(", ")}</p>`;
+    output.innerHTML += `<p>4. Even Numbers (Arrow): ${evenArrow.join(", ")}</p>`;
+
+    // 5. Returning Objects
+    function createUserNormal(name, age) {
+      return { name: name, age: age };
+    }
+    const createUserArrow = (name, age) => ({ name: name, age: age });
+
+    output.innerHTML += `<p>5. User (Normal): ${JSON.stringify(createUserNormal("Alice", 25))}</p>`;
+    output.innerHTML += `<p>5. User (Arrow): ${JSON.stringify(createUserArrow("Bob", 30))}</p>`;
+  </script>
+</body>
+</html>

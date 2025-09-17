@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    /* Responsive styling */
+    body {
+      font-family: Arial, sans-serif;
+     
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e68900;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //Change all <p> text
+                $("p").text("Hello World!");
+
+                // Handle Button Click
+                $("#btn").click( function () {
+                    $("#message").text("Hello World using jQuery!");
+                    $("h1").css("color", "red");
+                });
+        });
+    </script>
+</head>
+<body>
+     <h1>jQuery Basics Introduction</h1>
+       <p>Training by Coforge</p>
+
+    <p>Not loaded yet.</p>
+    <p>Not loaded yet.</p>
+    <p>Not loaded yet.</p>
+    <p>Not loaded yet.</p>
+
+   <div class="container">
+    <h1 id="message">Click the button to see Hello World!</h1>
+    <button id="btn">Show Message</button>
+  </div>
+</body>
+</html>

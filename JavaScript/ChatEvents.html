@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling with Chat App with Typing Indicator & Timestamp</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #chatBox {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      border: 1px solid gray;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      background: #f9f9f9;
+    }
+    #messageInput {
+      width: 300px;
+      padding: 8px;
+    }
+    button {
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: lightblue;
+    }
+    #typing {
+      font-style: italic;
+      color: gray;
+      margin-bottom: 10px;
+      height: 18px;
+    }
+    .message {
+      margin: 5px 0;
+      padding: 5px;
+      border-radius: 5px;
+      background: #e6f2ff;
+    }
+    .timestamp {
+      font-size: 0.8em;
+      color: gray;
+      display: block;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+    <h2>Chat Application</h2>
+
+  <div id="chatBox"></div>
+  <div id="typing"></div>
+
+  <input type="text" id="messageInput" placeholder="Type a message...">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    const chatBox = document.getElementById("chatBox");
+    const messageInput = document.getElementById("messageInput");
+    const typingIndicator = document.getElementById("typing");
+
+    let typingTimeout;
+
+    // Function to format current time (hh:mm AM/PM)
+    function getTime() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      const ampm = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12 || 12;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      return `${hours}:${minutes} ${ampm}`;
+    }
+
+    // Function to send message
+    function sendMessage() {
+      const message = messageInput.value.trim();
+      if (message === "") return;
+
+      const time = getTime();
+      chatBox.innerHTML += `
+        <div class="message">
+          <b>You:</b> ${message}
+          <span class="timestamp">${time}</span>
+        </div>`;
+
+      messageInput.value = "";
+      typingIndicator.textContent = ""; // Remove typing status
+      chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll
+    }
+
+    // Keyboard Event: Detect typing
+    messageInput.addEventListener("keydown", function(event) {
+      typingIndicator.textContent = "User is typing...";
+
+      // Clear previous timer
+      clearTimeout(typingTimeout);
+
+      // Remove typing status if no key pressed for 2 sec
+      typingTimeout = setTimeout(() => {
+        typingIndicator.textContent = "";
+      }, 2000);
+
+      // Send message on Enter
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>

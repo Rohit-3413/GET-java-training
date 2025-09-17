@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+    #div1{
+    width:30px;
+    height:50px;
+    background-color:red;
+    }
+    #div2{
+    width:30px;
+    height:50px;
+    background-color:green;
+    }
+    #div3{
+    width:30px;
+    height:50px;
+    background-color:yellow;
+    }
+    #div4{
+    width:30px;
+    height:50px;
+    background-color:blue;
+    }
+    #div5{
+    width:30px;
+    height:50px;
+    background-color:black;
+    }
+
+    #div6{
+    width:30px;
+    height:50px;
+    background-color:white;
+    border:1px solid black;
+    }
+
+    #chgcolor{
+    width:200px;
+    height:200px;
+    background-color:white;
+    border:1px solid black;
+    margin-top:-250px;
+    margin-left:200px
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+    $("#div1").click(function(){
+    $("#chgcolor").css("background-color","red");
+    });
+    
+    $("#div2").click(function(){
+    $("#chgcolor").css("background-color","green");
+    });
+    
+    $("#div3").click(function(){
+    $("#chgcolor").css("background-color","yellow");
+    });
+    
+    $("#div4").click(function(){
+    $("#chgcolor").css("background-color","blue");
+    });
+    
+    $("#div5").click(function(){
+    $("#chgcolor").css("background-color","black");
+    });
+
+    $("#myButton").click(function(){
+        $("#div6").css("background-color","aqua");
+    })
+});
+    </script>
+</head>
+<body>
+     <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+
+        <div id="div6"></div>
+        <button id="myButton">Hello</button>
+        <div id="chgcolor"></div>
+</body>
+</html>

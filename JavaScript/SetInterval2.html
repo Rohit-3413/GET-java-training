@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval Example 2</title>
+    <style>
+        #timerdiv {
+            background: rgb(211, 252, 27);
+            height: 50px;
+            width: 100px;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 30px;
+            color: #fff;
+            margin: 50px auto;
+            text-align: center;
+            text-shadow: 2px 2px #00fff2;
+            color: rgb(51, 51, 51);
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <h1>Date Functions</h1>
+    Current Date and Time: <span id="txt"></span> <br>
+    Current Time: <span id="txt1"></span>
+
+    <h1 id="d">Display Digital Clock</h1>
+    <div id="timerdiv"></div>
+
+    <script>
+
+        //function call with setInterval - display dynamic time
+        setInterval(function () { displayCurrentLocalTime() }, 1000);
+
+        function displayCurrentLocalTime() {
+            var currentTime = new Date().toLocaleTimeString();
+            document.getElementById("timerdiv").innerHTML = currentTime;
+        }
+
+
+        var today = new Date();
+        document.getElementById('txt').innerHTML = today;
+
+        var day = today.getDate();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
+        document.write("<br>Date is: " + day + "/" + month + "/" + year);
+
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        document.getElementById('txt1').innerHTML = h + ":" + m + ":" + s;  
+    </script>
+</body>
+</html>

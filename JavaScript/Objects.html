@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+</head>
+<body>
+     <h1>Java Script Objects</h1>
+
+    <p id="demo">Display the result here.</p>
+
+    <h2>Create a JSON string from a JavaScript object.</h2>
+    <p id="hellojson"></p>
+
+    <h2>Create & read JSON object with Arrays.</h2>
+    <p id="hellojson1"></p>
+
+    <script>
+        // Define & Initialise JS Object with Properties
+        var person = {name:"John",age:50,city:"Bengaluru"}; 
+
+        //Define JSON Object
+        const person1 ='{"name":"Mary","age":30,"city":"Mumbai","cars":["Ford","Maruti","BMW"]}';
+       
+       document.getElementById("demo").innerHTML= person.name+ " is "+person.age+" "+
+                                                    " years old from "+person.city;
+
+        // Convert JS Object to JSON String
+        var personJSON = JSON.stringify(person);
+        document.getElementById("hellojson").innerHTML=personJSON;
+
+        //Convert JSON Object to JS Object
+        var myperson = JSON.parse(person1);
+        document.getElementById("hellojson1").innerHTML= myperson.name+ " is "+myperson.age+" "+
+        " years old from "+myperson.city;
+
+        let car="";
+        for (let i = 0; i < myperson.cars.length; i++) {
+            car+=myperson.cars[i]+"-";
+        }
+        document.getElementById("hellojson1").innerHTML += " with cars : "+car;
+    </script>
+</body>
+</html>

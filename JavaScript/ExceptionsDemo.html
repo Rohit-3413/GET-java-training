@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exception Handling</title>
+     <style>
+    body { 
+        font-family: Arial, 
+        sans-serif; 
+        margin: 20px; }
+    
+        #output { 
+        margin-top: 15px; 
+        padding: 10px; 
+        background: #f2f2f2; 
+        border: 1px solid #ccc; }
+
+    p 
+    { 
+        margin: 8px 0; 
+    }
+  </style>
+</head>
+<body>
+    
+   <h2>JavaScript Exception Handling Example</h2>
+  <div id="output"></div>
+
+  <script>
+    let output = document.getElementById("output");
+
+    // Example 1: Basic try-catch
+    try {
+      let x = undefinedVariable; // This will throw ReferenceError
+    } catch (error) {
+      output.innerHTML += `<p><b>Example 1 (ReferenceError):</b> ${error.message}</p>`;
+    }
+
+    // Example 2: Custom error using throw
+    function withdraw(amount, balance) {
+      try {
+        if (amount > balance) {
+          throw new Error("Insufficient Balance!");
+        } else {
+          return `Withdrawn ₹${amount}, Remaining Balance ₹${balance - amount}`;
+        }
+      } catch (err) {
+        return `Error: ${err.message}`;
+      } finally {
+        output.innerHTML += `<p><i>Transaction attempted.</i></p>`;
+      }
+    }
+
+    output.innerHTML += `<p><b>Example 2:</b> ${withdraw(5000, 2000)}</p>`;
+
+    // Example 3: JSON parsing error
+    let jsonString = '{"name":"John", "age":30}'; 
+    let invalidJson = '{"name":"John", "age":}'; // Invalid JSON
+
+    try {
+      let user = JSON.parse(jsonString);
+      output.innerHTML += `<p><b>Example 3 (Valid JSON):</b> Name = ${user.name}, Age = ${user.age}</p>`;
+    } catch (e) {
+      output.innerHTML += `<p>Error parsing JSON: ${e.message}</p>`;
+    }
+
+    try {
+      let user = JSON.parse(invalidJson); // Will throw SyntaxError
+    } catch (e) {
+      output.innerHTML += `<p><b>Example 3 (Invalid JSON):</b> ${e.message}</p>`;
+    }
+  </script>
+</body>
+</html>

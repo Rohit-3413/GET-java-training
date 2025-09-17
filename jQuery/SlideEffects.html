@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLearn - Computer Training Courses</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .courses-container {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .courses-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .course {
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .course-header {
+            background: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .course-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .course-content {
+            display: none; /* Changed from height: 0 to display: none */
+        }
+        
+        .course-details {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .course-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .course-description {
+            margin-bottom: 15px;
+        }
+        
+        .enroll-btn {
+            background: #27ae60;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .enroll-btn:hover {
+            background: #219653;
+        }
+        
+        .demo-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-panel h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            text-align: center;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .demo-box {
+            height: 150px;
+            background: #3498db;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .course-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .courses-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <header>
+            <h1>TechLearn</h1>
+            <p class="tagline">Master the digital world with our computer training courses</p>
+        </header>
+        
+        <div class="courses-container">
+            <div class="courses-header">
+                <h2>Available Courses</h2>
+                <div class="controls">
+                    <button class="btn" id="expand-all">Expand All</button>
+                    <button class="btn" id="collapse-all">Collapse All</button>
+                </div>
+            </div>
+            
+            <div class="course">
+                <div class="course-header">
+                    <div class="course-title">Full Stack Web Development</div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="course-content">
+                    <div class="course-details">
+                        <div class="course-info">
+                            <div class="info-item"><i>⏱</i> Duration: 12 weeks</div>
+                            <div class="info-item"><i>💰</i> Price: $499</div>
+                            <div class="info-item"><i>📊</i> Level: Intermediate</div>
+                            <div class="info-item"><i>👨‍🏫</i> Instructor: John Smith</div>
+                        </div>
+                        <p class="course-description">
+                            Learn to build modern web applications from front-end to back-end. Master HTML, CSS, JavaScript, React, Node.js, and databases.
+                        </p>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course">
+                <div class="course-header">
+                    <div class="course-title">Data Science with Python</div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="course-content">
+                    <div class="course-details">
+                        <div class="course-info">
+                            <div class="info-item"><i>⏱</i> Duration: 10 weeks</div>
+                            <div class="info-item"><i>💰</i> Price: $449</div>
+                            <div class="info-item"><i>📊</i> Level: Advanced</div>
+                            <div class="info-item"><i>👨‍🏫</i> Instructor: Sarah Johnson</div>
+                        </div>
+                        <p class="course-description">
+                            Dive into data analysis, visualization, and machine learning using Python. Work with real-world datasets and build predictive models.
+                        </p>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course">
+                <div class="course-header">
+                    <div class="course-title">AI & Machine Learning Fundamentals</div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="course-content">
+                    <div class="course-details">
+                        <div class="course-info">
+                            <div class="info-item"><i>⏱</i> Duration: 14 weeks</div>
+                            <div class="info-item"><i>💰</i> Price: $599</div>
+                            <div class="info-item"><i>📊</i> Level: Advanced</div>
+                            <div class="info-item"><i>👨‍🏫</i> Instructor: Michael Chen</div>
+                        </div>
+                        <p class="course-description">
+                            Explore the fundamentals of artificial intelligence and machine learning algorithms. Build neural networks and deep learning models.
+                        </p>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-panel">
+            <h2>jQuery Sliding Effects Demonstration</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Try out the different sliding effects that are used throughout this website:</p>
+            
+            <div class="demo-controls">
+                <button class="btn" id="demo-slideDown">Slide Down</button>
+                <button class="btn" id="demo-slideUp">Slide Up</button>
+                <button class="btn" id="demo-slideToggle">Slide Toggle</button>
+            </div>
+            
+            <div class="demo-box" id="sliding-demo">
+                <div>Watch me slide!</div>
+            </div>
+            
+            <div class="code-example">
+                <h3 style="color: #f8f8f2; margin-bottom: 15px;">Code Example:</h3>
+                <pre>
+// Slide Down
+$("#element").slideDown(500);
+
+// Slide Up
+$("#element").slideUp(500);
+
+// Slide Toggle
+$("#element").slideToggle(500);
+                </pre>
+            </div>
+        </div>
+        
+        <footer>
+            <p>TechLearn Computer Training Courses - jQuery Sliding Effects Demonstration</p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Course accordion functionality - FIXED
+            $(".course-header").click(function() {
+                // Toggle the clicked course content
+                $(this).next(".course-content").slideToggle(500);
+                
+                // Update the toggle icon for the clicked course
+                $(this).find(".toggle-icon").text(
+                    $(this).next(".course-content").is(":visible") ? "▲" : "▼"
+                );
+            });
+            
+            // Expand all courses
+            $("#expand-all").click(function() {
+                $(".course-content").slideDown(500);
+                $(".toggle-icon").text("▲");
+            });
+            
+            // Collapse all courses
+            $("#collapse-all").click(function() {
+                $(".course-content").slideUp(500);
+                $(".toggle-icon").text("▼");
+            });
+            
+            // Demo sliding effects
+            $("#demo-slideDown").click(function() {
+                $("#sliding-demo").slideDown(1000);
+            });
+            
+            $("#demo-slideUp").click(function() {
+                $("#sliding-demo").slideUp(1000);
+            });
+            
+            $("#demo-slideToggle").click(function() {
+                $("#sliding-demo").slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>

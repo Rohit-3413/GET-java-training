@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Fade Demo</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #wheel{
+            position: absolute;
+            padding-left: 600px;
+            width:70px;
+            height: auto;
+        }
+        </style>
+    </head>
+<body>
+     <h1>jQuery Fade Effects Demo</h1>
+    
+<script>
+        $(document).ready(function(){
+            $("#wheel").hide();
+            $("button").click(function(){
+                $("#one").fadeToggle();
+                $("#two").fadeToggle("slow");
+                $("#wheel").show();
+                $("#three").fadeToggle(3000);
+            });
+        });
+</script>
+<button>Namaste</button><br><br>
+<div class="fade">
+     
+<div id="one" style="width:2200px;height:60px;display:none;background-color:rgb(255, 137, 2);"></div><br>
+<IMG SRC="Spinning_Ashoka_Chakra.gif" id="wheel">
+<div id="two" style="width:2200px;height:60px;display:none;background-color:white;"></div><br>
+<div id="three" style="width:2200px;height:60px;display:none;background-color:green;"></div>
+ 
+</div>
+</body>
+</html>

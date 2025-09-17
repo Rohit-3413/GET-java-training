@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript Math Methods</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    p {
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+     <h2>JavaScript Math Methods Demo</h2>
+  <div id="output"></div>
+
+  <script>
+    let output = document.getElementById("output");
+
+    let num = 7.56;
+    let negative = -15;
+
+    // 1. Math.round()
+    output.innerHTML += `<p><b>1. round(7.56):</b> ${Math.round(num)}</p>`;
+
+    // 2. Math.floor()
+    output.innerHTML += `<p><b>2. floor(7.56):</b> ${Math.floor(num)}</p>`;
+
+    // 3. Math.ceil()
+    output.innerHTML += `<p><b>3. ceil(7.56):</b> ${Math.ceil(num)}</p>`;
+
+    // 4. Math.trunc()
+    output.innerHTML += `<p><b>4. trunc(7.56):</b> ${Math.trunc(num)}</p>`;
+
+    // 5. Math.abs()
+    output.innerHTML += `<p><b>5. abs(-15):</b> ${Math.abs(negative)}</p>`;
+
+    // 6. Math.sqrt()
+    output.innerHTML += `<p><b>6. sqrt(49):</b> ${Math.sqrt(49)}</p>`;
+
+    // 7. Math.pow()
+    output.innerHTML += `<p><b>7. pow(2, 4):</b> ${Math.pow(2, 4)}</p>`;
+
+    // 8. Math.max()
+    output.innerHTML += `<p><b>8. max(10, 20, 5, 30):</b> ${Math.max(10, 20, 5, 30)}</p>`;
+
+    // 9. Math.min()
+    output.innerHTML += `<p><b>9. min(10, 20, 5, 30):</b> ${Math.min(10, 20, 5, 30)}</p>`;
+
+    // 10. Math.random()
+    output.innerHTML += `<p><b>10. random() between 0 and 1:</b> ${Math.random()}</p>`;
+
+    // 11. Random number between 1–100
+    let random100 = Math.floor(Math.random() * 100) + 1;
+    output.innerHTML += `<p><b>11. Random number (1–100):</b> ${random100}</p>`;
+
+    // 12. Math.PI
+    output.innerHTML += `<p><b>12. PI value:</b> ${Math.PI}</p>`;
+
+    // 13. Math.E
+    output.innerHTML += `<p><b>13. Euler’s number (e):</b> ${Math.E}</p>`;
+
+    // 14. Math.log()
+    output.innerHTML += `<p><b>14. log(10):</b> ${Math.log(10).toFixed(4)}</p>`;
+
+    // 15. Math.sin(), Math.cos(), Math.tan()
+    output.innerHTML += `<p><b>15. sin(90°):</b> ${Math.sin(Math.PI / 2)}</p>`;
+    output.innerHTML += `<p><b>15. cos(0°):</b> ${Math.cos(0)}</p>`;
+    output.innerHTML += `<p><b>15. tan(45°):</b> ${Math.tan(Math.PI / 4)}</p>`;
+  </script>
+</body>
+</html>

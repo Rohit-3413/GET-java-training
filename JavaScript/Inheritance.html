@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops Inheritance</title>
+</head>
+<body>
+    <h1>Inheritance in JS OOPs</h1>
+
+    <script>
+        class Person{
+
+            #name;  //// Declare private field
+            #age;   
+            _basic;  // Declare protected field
+
+            constructor(name,age,basic){
+                this.name=name;
+                this.age=age;  
+                this.basic=basic;        
+            }
+            introduceSelf(){
+                document.write(`<br>Hi, I am ${this.name} and I am ${this.age} 
+                years with Salary ${this.basic}`);
+            }
+        }
+
+        class Professor extends Person{
+            #department;   //Private data property
+            constructor(name,age,department,basic){
+                super(name,age,basic);
+                this.department=department;
+        }
+        introduceSelf(){
+            this.basic=this.basic+(this.basic*.10);
+            document.write(`<br>Hi, I am ${this.name} and I am ${this.age} years & i will be your
+                             ${this.department} profeesor with salary ${this.basic}`);
+        }
+
+        grade(paper){
+            const grade=Math.floor(Math.random()* (5 -1) + 1); // assign random grades
+            document.write(`<br>You got grade ${grade} in ${paper}.`);
+        }
+    }
+
+    const walsh =new Professor("Mark Walsh",55,"Information Science",5000);
+    const mary =new Professor("Mary Adams",45,"Physcology",6000);
+    var person1 = new Person("Naveen",25,1000);
+
+    walsh.introduceSelf();
+    mary.introduceSelf();
+    person1.introduceSelf();
+
+    walsh.grade('AI');
+    mary.grade('Mentality of Kids');
+    </script>
+</body>
+</html>

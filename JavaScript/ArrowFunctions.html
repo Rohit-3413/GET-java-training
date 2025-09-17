@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions Example</title>
+</head>
+<body>
+    <h2>Arrow Functions in JavaScript</h2>
+  <p>Arrow functions in JavaScript, introduced in ES6, provide a concise 
+    syntax for writing function expressions. 
+    They are a more compact alternative to traditional function 
+    expressions and offer a different handling of the this keyword.</p>
+    <h3>When to Use Arrow Functions:</h3>
+    <ul>
+        <li><strong>Callbacks:</strong> In array methods like map, filter, reduce, or in asynchronous operations.</li>
+        <li><strong>Concise, single-line functions:</strong> Where implicit return can significantly shorten the code.</li>
+        <li>Maintaining this context: When you need <strong>this</strong> to refer to the surrounding scope.</li>
+    </ul>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // 1. Simple Arrow Function (Add numbers)
+    const add = (a, b) => a + b;
+    output.innerHTML += `<p>1. Sum of 5 + 10 = ${add(5, 10)}</p>`;
+
+    // 2. Arrow Function with one parameter (Square a number)
+    const square = n => n * n;
+    output.innerHTML += `<p>2. Square of 6 = ${square(6)}</p>`;
+
+    // 3. Arrow Function with no parameters
+    const greet = () => "Hello, welcome!";
+    output.innerHTML += `<p>3. ${greet()}</p>`;
+
+    // 4. Arrow Function inside setTimeout (real-time async task)
+    setTimeout(() => {
+      output.innerHTML += `<p>4. ⏰ This message is delayed by 2 seconds</p>`;
+    }, 2000);
+
+    // 5. Arrow Function with array filter (filter even numbers)
+    const numbers = [1, 2, 3, 4, 5, 6];
+    const evenNumbers = numbers.filter(num => num % 2 === 0);
+    output.innerHTML += `<p>5. Even numbers = ${evenNumbers.join(", ")}</p>`;
+
+    // 6. Arrow Function with array map (convert to uppercase)
+    const fruits = ["apple", "banana", "cherry"];
+    const upperFruits = fruits.map(fruit => fruit.toUpperCase());
+    output.innerHTML += `<p>6. Fruits in uppercase = ${upperFruits.join(", ")}</p>`;
+
+    // 7. Arrow Function returning an object
+    const createUser = (name, age) => ({ name: name, age: age });
+    const user = createUser("Alice", 25);
+    output.innerHTML += `<p>7. User = ${JSON.stringify(user)}</p>`;
+
+    // 8. Arrow Function inside forEach (printing values)
+    numbers.forEach(num => {
+      console.log("Number: " + num);
+    });
+  </script>
+</body>
+</html>

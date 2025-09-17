@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and Id Selectors</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <style type="text/css">
+    p{
+        padding: 20px;
+        font: 20px sans-serif;
+        background: khaki;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#colorButton").click(function (e) {
+    $(".myClass").css("backgroundColor", "Red");
+});
+
+$("#colorButton1").click(function (e) {
+    $(".myPara").css("backgroundColor", "aqua");
+});
+});
+
+$(document).ready(function(){
+    $("#restore").click(function (e) {
+    $(".myClass").css("backgroundColor", "");
+});
+});
+</script>
+
+</head>
+<body>
+    
+ <p class="myClass">Paragraph with class "myClass"</p>
+<p class="myPara">Paragraph with class "anotherClass"</p>
+ 
+<div class="myClass">Div with class "myClass"</div>
+<div class="myDiv">Div with class "mydiv"</div>
+ 
+<a href="#" class="myClass">Anchor with class "myClass"</a> <br>
+<a href="#" class="myAnchor">Anchor with class "myAnchor"</a>
+ <br>
+<button id="colorButton">Change Color</button> 
+<button id="restore">Restore</button> 
+
+<br><br>
+<button id="colorButton1">Change Color of 2nd Paragraph</button>
+</body>
+</html>

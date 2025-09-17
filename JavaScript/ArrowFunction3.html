@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> This in Normal vs Arrow Functions</title>
+</head>
+<body>
+ <h2>`this` Keyword in Normal vs Arrow Functions</h2>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // Example Object
+    const user = {
+      name: "Alice",
+
+      // Normal Function
+      showNameNormal: function () {
+        setTimeout(function () {
+          output.innerHTML += `<p>Normal Function: Hello, ${this.name}</p>`;
+          console.log("Normal Function this:", this);
+        }, 1000);
+      },
+
+      // Arrow Function
+      showNameArrow: function () {
+        setTimeout(() => {
+          output.innerHTML += `<p>Arrow Function: Hello, ${this.name}</p>`;
+          console.log("Arrow Function this:", this);
+        }, 2000);
+      }
+    };
+
+    user.showNameNormal();
+    user.showNameArrow();
+  </script>
+</body>
+</html>

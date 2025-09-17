@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval Example 3</title>
+    <style>
+        #divcls {
+        background: green;
+        height: 200px;
+        width:300px;
+        border-radius: 15px;
+        padding:20px;
+        font-size:22px;
+        color:#fff;   
+}
+    </style>
+</head>
+<body>
+     <h1>Set Interval demo</h1>
+
+        <div id="divcls"></div>
+
+        <script>
+            window.setInterval(function(){ myFunction()},1000);
+
+            function myFunction()
+            {
+                if(document.getElementById("divcls").style.backgroundColor=='green'){
+                    document.getElementById("divcls").style.backgroundColor='red';
+                }
+                else{
+                    document.getElementById("divcls").style.backgroundColor='green';
+                }
+            }
+           
+        </script>
+</body>
+</html>

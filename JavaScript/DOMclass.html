@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Select Elements by Class Name & Tag Name</title>
+     <script>
+        function test()
+        {
+            // Selecting elements with class test
+            var matches = document.getElementsByClassName("test");
+            var a= document.getElementsByClassName("hello");
+            a[0].style.color = "red"; 
+            var b=document.getElementsByTagName("h5");
+            b[0].style.color="blue";
+            b[1].style.color="green";
+            b[2].innerHTML="Testing DOM2";
+            b[2].style.color="brown";
+        
+            // Displaying the selected elements count
+           
+            //  document.write("Number of selected elements: " + matches.length);
+            // Applying bold style to first element in selection
+            matches[0].style.fontWeight = "bold";
+        
+            matches[0].style.color = "red";
+            matches[1].style.color = "blue";
+            matches[2].style.color = "green";
+                
+            // Applying italic style to last element in selection
+            matches[matches.length - 1].style.fontStyle = "italic";
+                
+            // Highlighting each element's background through loop
+            for(var elem in matches) {  
+                matches[elem].style.background = "yellow";
+            }
+          //  var a= document.getElementsByClassName("hello");
+          // a[0].style.color = "red";
+        }
+            </script>
+
+</head>
+<body>
+
+<p class="test">This is a paragraph of text.</p>
+    <div class="block test">This is another paragraph of text.</div>
+    <div class="block1 test">This is one more paragraph of text.</div>
+ 
+    <hr>
+    <h2 class="hello">DOM Methods by ClassName</h2>
+    <h5>Testing DOM </h5>
+    <h5>Testing DOM 1</h5>
+    <h5></h5>
+
+    <input type="button" value="Click Me" onclick="test()">
+</body>
+</html>

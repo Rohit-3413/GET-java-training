@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+
+
+<style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            color: blue;
+        }
+        #countdown {
+            font-size: 5rem;
+            color: #ff6347;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    
+</head>
+<body>
+     <h1>Count Down Timer Demo using SetTimeOut() method of BOM</h1>
+
+    <h2 id="countdown">Set Initial Value</h2>
+
+    <script>
+        // initial countDown value
+        let countdownValue=20;
+
+        //function to update countdown
+        function updateCountdown() {
+            if(countdownValue > 0) {
+            document.getElementById("countdown").innerHTML = countdownValue;
+            countdownValue --;
+          setTimeout(updateCountdown,1000);
+        }else{
+            document.getElementById("countdown").innerHTML = "Time's Up!";
+        }        
+    }
+        //Start the countdown
+        setTimeout(updateCountdown,1000);
+    </script>
+</body>
+</html>

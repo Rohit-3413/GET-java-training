@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+
+    #cart {
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px solid #333;
+      width: 300px;
+      background: #f9f9f9;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .removeBtn {
+      margin-left: 10px;
+      padding: 3px 8px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .removeBtn:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+    <h1>Online Shopping Cart</h1>
+
+  <p>Welcome to our store!</p>
+
+  <!-- Product List -->
+  <div class="product">
+    <h3 class="item">Laptop</h3>
+    <p class="price">$800</p>
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3 class="item">Headphones</h3>
+    <p class="price">$50</p>
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3 class="item">Smartphone</h3>
+    <p class="price">$600</p>
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <!-- Shopping Cart -->
+  <div id="cart">
+    <h3>Your Cart</h3>
+    <ul></ul>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // 1. Element Selector: Select all <p>
+      $("p").first().css("color", "blue");
+
+      // 2. Class Selector: Highlight product names
+      $(".item").addClass("highlight");
+
+      // 3. ID Selector: Add border to the cart
+      $("#cart").css("background-color", "#f9f9f9");
+
+      // 4. Attribute Selector: Add hover effect to all buttons
+      $("button[class='addToCart']").hover(
+        function () {
+          $(this).css("background", "#ddd");
+        },
+        function () {
+          $(this).css("background", "");
+        }
+      );
+
+      // 5. Real-time example: Add product to cart on button click
+      $(".addToCart").click(function () {
+        const productName = $(this).siblings(".item").text();
+        const productPrice = $(this).siblings(".price").text();
+
+        // Add product with a remove button
+        $("#cart ul").append(
+          `<li>${productName} - ${productPrice} 
+            <button class="removeBtn">Remove</button>
+          </li>`
+        );
+      });
+
+      // 6. Remove from cart using event delegation
+      $("#cart").on("click", ".removeBtn", function () {
+        $(this).parent().remove();
+      });
+    });
+  </script>
+</body>
+</html>
