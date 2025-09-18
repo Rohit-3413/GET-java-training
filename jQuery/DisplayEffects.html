@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - jQuery Display Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6c5ce7, #8e44ad);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        
+        .filter-section h3 {
+            color: #6c5ce7;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .filter-options {
+            list-style: none;
+        }
+        
+        .filter-options li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .filter-options li:hover {
+            background: #e9ecef;
+        }
+        
+        .products-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .view-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5649c5;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            color: #6c5ce7;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .demo-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-panel h2 {
+            color: #6c5ce7;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            text-align: center;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .demo-box {
+            height: 150px;
+            background: #6c5ce7;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #6c757d;
+        }
+        
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .product-description {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ShopEasy</h1>
+            <p class="tagline">Your one-stop shopping destination</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <ul class="filter-options">
+                        <li data-category="all">All Products</li>
+                        <li data-category="electronics">Electronics</li>
+                        <li data-category="clothing">Clothing</li>
+                        <li data-category="books">Books</li>
+                    </ul>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <ul class="filter-options">
+                        <li data-price="all">All Prices</li>
+                        <li data-price="0-25">Under $25</li>
+                        <li data-price="25-50">$25 - $50</li>
+                        <li data-price="50-100">$50 - $100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="products-container">
+                <div class="products-header">
+                    <h2>Featured Products</h2>
+                    <div class="view-controls">
+                        <button class="btn" id="show-products">Show Products</button>
+                        <button class="btn" id="hide-products">Hide Products</button>
+                        <button class="btn" id="toggle-products">Toggle Products</button>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="products-grid">
+                    <div class="product-card" data-category="electronics" data-price="45">
+                        <div class="product-image">
+                            <img src="headphones.webp" alt="Wireless Headphones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Wireless Headphones</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart">Add to Cart</button>
+                                <button class="btn details-btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-category="electronics" data-price="75">
+                        <div class="product-image">
+                            <img src="smartwatch.webp" alt="Smart Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Smart Watch</h3>
+                            <p class="product-price">$75.99</p>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart">Add to Cart</button>
+                                <button class="btn details-btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-category="clothing" data-price="35">
+                        <div class="product-image">
+                            <img src="tshirt.webp" alt="Cotton T-Shirt">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Cotton T-Shirt</h3>
+                            <p class="product-price">$35.99</p>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart">Add to Cart</button>
+                                <button class="btn details-btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-category="books" data-price="15">
+                        <div class="product-image">
+                            <img src="jsbook.webp" alt="JavaScript Guide">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">JavaScript Guide</h3>
+                            <p class="product-price">$15.99</p>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart">Add to Cart</button>
+                                <button class="btn details-btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-panel">
+            <h2>jQuery Display Effects Demonstration</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Try out the different display effects used in this shopping portal:</p>
+            
+            <div class="demo-controls">
+                <button class="btn" id="demo-show">Show Effect</button>
+                <button class="btn" id="demo-hide">Hide Effect</button>
+                <button class="btn" id="demo-toggle">Toggle Effect</button>
+            </div>
+            
+            <div class="demo-box" id="display-demo">
+                <div>Watch jQuery display effects!</div>
+            </div>
+            
+            <div class="code-example">
+                <h3 style="color: #f8f8f2; margin-bottom: 15px;">Code Examples:</h3>
+                <pre>
+// Show effect
+$("#element").show();
+
+// Hide effect
+$("#element").hide();
+
+// Toggle effect
+$("#element").toggle();
+
+// Show with animation
+$("#element").show("slow");
+
+// Hide with animation
+$("#element").hide(1000);
+
+// Toggle with animation
+$("#element").toggle("fast");
+                </pre>
+            </div>
+        </div>
+        
+        <div class="cart-notification" id="cart-notification">
+            Item added to cart successfully!
+        </div>
+        
+        <footer>
+            <p>ShopEasy - jQuery Display Effects Demonstration</p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Show products
+            $("#show-products").click(function() {
+                $("#products-grid").show(500);
+            });
+            
+            // Hide products
+            $("#hide-products").click(function() {
+                $("#products-grid").hide(500);
+            });
+            
+            // Toggle products
+            $("#toggle-products").click(function() {
+                $("#products-grid").toggle(500);
+            });
+            
+            // Demo show effect
+            $("#demo-show").click(function() {
+                $("#display-demo").show(1000);
+            });
+            
+            // Demo hide effect
+            $("#demo-hide").click(function() {
+                $("#display-demo").hide(1000);
+            });
+            
+            // Demo toggle effect
+            $("#demo-toggle").click(function() {
+                $("#display-demo").toggle(1000);
+            });
+            
+            // Add to cart functionality
+            $(".add-to-cart").click(function() {
+                $("#cart-notification").fadeIn(300).delay(2000).fadeOut(300);
+            });
+            
+            // Filter by category
+            $(".filter-options li[data-category]").click(function() {
+                const category = $(this).data("category");
+                
+                if (category === "all") {
+                    $(".product-card").show(400);
+                } else {
+                    $(".product-card").hide(400);
+                    $(`.product-card[data-category="${category}"]`).show(400);
+                }
+            });
+            
+            // Filter by price
+            $(".filter-options li[data-price]").click(function() {
+                const priceRange = $(this).data("price");
+                
+                if (priceRange === "all") {
+                    $(".product-card").show(400);
+                } else {
+                    $(".product-card").each(function() {
+                        const price = parseFloat($(this).data("price"));
+                        
+                        if (priceRange === "0-25" && price < 25) {
+                            $(this).show(400);
+                        } else if (priceRange === "25-50" && price >= 25 && price < 50) {
+                            $(this).show(400);
+                        } else if (priceRange === "50-100" && price >= 50 && price < 100) {
+                            $(this).show(400);
+                        } else {
+                            $(this).hide(400);
+                        }
+                    });
+                }
+            });
+            
+            // Product details toggle
+            $(".details-btn").click(function() {
+                $(this).closest(".product-info").find(".product-description").toggle(400);
+                
+                // Create description if it doesn't exist
+                if ($(this).closest(".product-info").find(".product-description").length === 0) {
+                    const description = $(this).closest(".product-card").find(".product-title").text() + 
+                                       " - High quality product with excellent features. Suitable for all your needs.";
+                    $(this).closest(".product-info").append(
+                        $("<p>").addClass("product-description").text(description).hide()
+                    ).find(".product-description").toggle(400);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
