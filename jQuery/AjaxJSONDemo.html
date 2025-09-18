@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX JSON Students from Online Server</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 80%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #98bf21; color: white; }
+  </style>
+</head>
+<body>
+
+  <h2>Load Many Students (JSON) from Online API</h2>
+  <button id="loadStudentsJSON">Load Students (JSON)</button>
+  <div id="outputJSON"></div>
+
+  <script>
+    $(document).ready(function(){
+      $("#loadStudentsJSON").click(function(){
+        $.getJSON("https://dummyjson.com/users", function(data) {
+          let users = data.users;  
+          let html = "<table><tr><th>ID</th><th>Name</th><th>Email</th><th>Age</th><th>City</th></tr>";
+          
+          $.each(users, function(index, user){
+            html += "<tr>"
+                 + "<td>" + user.id + "</td>"
+                 + "<td>" + user.firstName + " " + user.lastName + "</td>"
+                 + "<td>" + user.email + "</td>"
+                 + "<td>" + user.age + "</td>"
+                 + "<td>" + user.address.city + "</td>"
+                 + "</tr>";
+          });
+          
+          html += "</table>";
+          $("#outputJSON").html(html);
+        }).fail(function(jqXHR, textStatus, error){
+          $("#outputJSON").html("<p style='color:red;'>Error: " + error + "</p>");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

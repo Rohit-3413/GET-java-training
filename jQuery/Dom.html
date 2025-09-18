@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM Manipulationt</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+$(document).ready(function(){
+    $("#test").click(function() {
+    $("ul").before("<h2>My favourite dogs!!</h2>")
+    $("ul").after("<h2>All dogs are adorable!!</h2>")
+
+          // alert($("li").text());
+            $("p").text("Welcome to this fun of jQuery World")
+
+          // alert( $("li:first").html());
+            $("li:last").html("<li> German shepherd</li>")
+
+            $("h1").css("background-color", "blue")
+            $("ul li").css("color", "green") ; });
+        });
+
+        $(document).ready(function(){
+           
+            
+            $("button").click(function(){
+                $("img").attr("border","5px solid black")
+            });
+
+            $("#btn2").click(function(){
+                $("img").css("border","5px solid red")
+            });
+
+            $("#btn3").click(function(){
+                $("img").hide();
+            });
+
+            $("#btn4").click(function(){
+                $("img").show();
+            });
+        });
+    </script>
+    <style>
+       
+        img{width:200px;height: 200px;}
+    </style>
+       
+</head>
+  <h1>jQuery - DOM Manipulation</h1>
+    <p>By Coforge</p> 
+    <ul>
+        <li>Golden Retriever</li>
+        <li>Syberian Husky</li>
+        <li>Boxer</li>
+    </ul>  
+
+    <button id="test">DOM Manipulation</button> <br><br>
+    <div class="puppers">
+        <img src="goldie.jpg" alt="Goldie">
+        <img src="husky.jpg" alt="Husky">
+        <img src="boxer.jpg" alt="Boxer">
+    </div>
+<br>
+    <button>Set Border</button>
+    <button id="btn2">Set Border with CSS</button>
+<br>
+<br>
+<hr>
+    <img src="goldie.jpg" alt="Goldie">
+    <br><br>
+    <button id="btn3">Hide</button>
+    <button id="btn4">Show</button>
+</html>

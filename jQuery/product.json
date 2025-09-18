@@ -1,0 +1,32 @@
+[
+    {
+      "Product": "Samsung Mobile",
+      "color": "Brown",
+      "Price": "$40.77"
+    },
+    {
+      "Product": "Lenova Laptop",
+      "color": "Black",
+      "Price": "$21.45"
+    },
+    {
+      "Product": "Cannon Camera",
+      "color": "Pink",
+      "Price": "$101.50"
+    },
+    {
+        "Product": "Logitech Mouse",
+        "color": "Silver",
+        "Price": "$10"
+      },
+      {
+          "Product": "HP Printer",
+          "color": "White",
+          "Price": "$50"
+        },
+     {
+          "Product": "iPhone17 Pro",
+          "color": "Orange",
+          "Price": "$500"
+        }
+  ]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+    img{
+        position: relative; /* Required to move element */
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("button").click(function(){
+        $("img").animate({
+            left: 1000,height:'400px',width:'300px'
+        },10000);
+    });
+});
+</script>
+</head>
+<body>
+    <h1>Example of jQuery Animation Effects</h1>
+    <button type="button">Start Animation</button>
+    <p>
+    	<img src="joker.gif"  width="200px" height="200px" alt="Joker">
+    </p>
+</body>
+</html>

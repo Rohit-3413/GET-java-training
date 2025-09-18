@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read xml data in jquery-Ajax using ajax() method</title>
+    <style>
+         #books {
+            font:12px Arial;
+            width:500px;
+            text-align:center;
+            overflow:hidden;
+            color: brown;
+        }
+        #books div  {
+            width:auto;
+            text-align:left;
+            margin:1px;
+            padding:2px 5px;
+            letter-spacing:1px;
+            background-color: aquamarine;
+           margin-left: auto;
+           margin-right: auto;
+        }
+    </style>
+     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script>
+         $(document).ready(function(){ 
+            $("#bt").click(function() {
+                $("#books").empty();  // clear div
+                $.ajax({type:'GET',url:'Book.xml',success:function(xmlData)
+            {
+                $(xmlData).find('List').each(function(){
+                    $('#books').append(
+                        '<div>' +
+                            '<div><b>Name of Book :</b>' +
+                            $(this).find('BookName').text()+ '</div>' +
+                            '<div><b>Category :</b>' +
+                             $(this).find('Category').text()+ '</div>' +
+                             '<div><b>Price :</b>' +
+                             $(this).find('Price').text()+ '</div>' +
+                     '</div>');
+                    });
+                }
+            });
+            });
+         });
+    </script>
+</head>
+<body>
+    <h1>Display Book Details from XML Document</h1>
+
+    <button id="bt">Display Books</button>
+    <br>
+    <br>
+    <div id="books"></div>
+</body>
+</html>

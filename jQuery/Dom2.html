@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management - jQuery DOM Methods</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #0066cc; }
+    #studentList { margin-top: 20px; padding: 10px; border: 2px solid #ccc; border-radius: 8px; width: 400px; }
+    .student { padding: 5px; border-bottom: 1px solid #ddd; }
+    .student:last-child { border-bottom: none; }
+    button { margin: 5px; padding: 8px 12px; border: none; border-radius: 6px; cursor: pointer; }
+    .btn { background: #007bff; color: white; }
+  </style>
+</head>
+<body>
+    <!--
+        ********* DOM Manipulation Methods **********
+        before() → Adds a new student before John Doe.
+        after() → Adds a new student after John Doe.
+        text() → Changes John Doe’s text.
+        html() → Replaces the whole list with new HTML content.
+        css() → Changes style (color, size, background) of John Doe.
+        attr() → Adds a tooltip (title attribute) to John Doe.
+        val() → Reads input value and appends as a new student.
+        prepend() → Inserts a new student at the top of the list.
+        append() → Inserts a new student at the bottom of the list.
+    -->
+
+<h1>🎓 Student Management System (DOM Methods Demo)</h1>
+<p>Type a student name to test methods:</p>
+
+<input type="text" id="studentName" placeholder="Enter student name">
+<br><br>
+
+<!-- Buttons for each method -->
+<button class="btn" id="beforeBtn">before()</button>
+<button class="btn" id="afterBtn">after()</button>
+<button class="btn" id="prependBtn">prepend()</button>
+<button class="btn" id="appendBtn">append()</button>
+<button class="btn" id="textBtn">text()</button>
+<button class="btn" id="htmlBtn">html()</button>
+<button class="btn" id="cssBtn">css()</button>
+<button class="btn" id="attrBtn">attr()</button>
+<button class="btn" id="valBtn">val()</button>
+
+<div id="studentList">
+  <h3>Student List</h3>
+  <div class="student" id="firstStudent">John Doe</div>
+  <div class="student">Jane Smith</div>
+</div>
+    
+<script>
+$(document).ready(function(){
+
+  // before() → Add text before the first student
+  $("#beforeBtn").click(function(){
+    $("#firstStudent").before("<div class='student'>👦 New Student (Before John)</div>");
+  });
+
+  // after() → Add text after the first student
+  $("#afterBtn").click(function(){
+    $("#firstStudent").after("<div class='student'>👧 New Student (After John)</div>");
+  });
+
+  // prepend() → Add student at the top of the list
+  $("#prependBtn").click(function(){
+    $("#studentList").prepend("<div class='student'>✨ New Topper Student</div>");
+  });
+
+  // append() → Add student at the bottom of the list
+  $("#appendBtn").click(function(){
+    $("#studentList").append("<div class='student'>🎉 New Student at Bottom</div>");
+  });
+
+  // text() → Replace text of the first student
+  $("#textBtn").click(function(){
+    $("#firstStudent").text("📘 Updated Student Name");
+  });
+
+  // html() → Replace HTML inside the student list
+  $("#htmlBtn").click(function(){
+    $("#studentList").html("<h3>🎉 All students graduated!</h3><p>No students left.</p>");
+  });
+
+  // css() → Change style of first student
+  $("#cssBtn").click(function(){
+    $("#firstStudent").css({"color":"red", "font-size":"20px", "background":"#ffeeba"});
+  });
+
+  // attr() → Add an attribute to first student
+  $("#attrBtn").click(function(){
+    $("#firstStudent").attr("title", "This is the first student");
+    alert("Hover over John Doe to see the tooltip!");
+  });
+
+  // val() → Get value from input and add as student
+  $("#valBtn").click(function(){
+    let name = $("#studentName").val();
+    if(name.trim() !== ""){
+      $("#studentList").append("<div class='student'>✨ "+name+"</div>");
+      $("#studentName").val(""); // clear input
+    } else {
+      alert("Please enter a name first!");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

@@ -4,26 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animation in jQuery</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+     
+
+<script> 
 $(document).ready(function(){
   $("button").click(function(){
-    //$(selector).animate({params}, speed, callback); 
-    //params - css properties tobe animated
-    $("div").animate({left:'700px',opacity:'0.10px',
-    height:'200px',width:'100px'},"slow");
 
-     $("div").animate({bottom:'100px'},5000);
-    $("div").css("background-color","yellow");
+    // Move Right (1st corner)
+    $("div").animate({ left: '600px'}, 2000 , function(){
+           $(this).css({"background-color":"red", height:'120px', width:'120px' });
+  })
 
-    $("div").animate({right:'500px'},3000);
-    $("div").css("background-color","aqua"); 
+    // Move Down (2nd corner)
+           .animate({ top: '300px'}, 2000 , function(){
+           
+           $(this).css({"background-color":"blue", height:'140px', width:'80px'} );
+})
+    // Move Left (3rd corner)
+           
+.animate({ left: '0px'}, 2000 , function(){
+           
+           $(this).css({"background-color":"green", height:'100px', width:'150px' ,
+            "border":"5px solid red","border-radius":"15px"});
+           } )
+
+    // Move Up (4th corner - back to start)
+          .animate({ top: '75px'}, 2000 , function(){
+           
+           $(this).css({"background-color":"yellow", height:'100px', width:'100px'} );
+});
+
   });
 });
 </script> 
+
+<script>
+        $(document).ready(function () {
+            $("button").click(function () {
+
+                // Move Right (1st corner)
+                $("div").animate({ left: '600px' }, 2000, function(){
+                    $(this).css({"background-color": "red",height: '120px', width: '120px' });
+                })
+                   
+                    // Move Down (2nd corner)
+                    .animate({ top: '600px' }, 2000, function(){
+                    $(this).css({"background-color": "blue",height: '120px', width: '120px' });
+                })
+
+                    // Move Left (3rd corner)
+                   .animate({ left: '0px' }, 2000, function(){
+                    $(this).css({"background-color": "yellow",height: '120px', width: '120px',
+                        "border": "5px solid red","border-radius": "15px"
+                     });
+                })
+
+
+                    // Move Up (4th corner - back to start)
+                    .animate({ top: '75px' }, 2000, function(){
+                    $(this).css({"background-color": "yellow",height: '120px', width: '120px' });
+                })
+
+            });
+        });
+    </script>
+
 </head>
 <body>
-    <button>Start Animation</button>
+    
+<button>Start Animation</button>
 <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
 <div style="background:#98bf21;height:100px;width:100px;position:absolute;">
 </div>

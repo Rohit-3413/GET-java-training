@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery ajax -load() method</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $("button").click(function(){
+    /*The load() method loads data from a server and puts the
+     returned data into the selected element.*/
+    $("#div1").load("demo_test.txt");
+  });
+});
+</script>
+
+</head>
+<body>
+     <h1>Ajax Demo</h1>
+  <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+  <button>Get External Content</button>
+</body>
+</html>

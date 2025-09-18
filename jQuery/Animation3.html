@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Animation for Kids</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      background: #f0f8ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #ff6600;
+    }
+    #ball {
+      background: red;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #00cc66;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      margin-top: 200px;
+    }
+    button:hover {
+      background: #00994d;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎉 Welcome to Fun Kids World 🎉</h1>
+<p>Click the button to see the magic ball bounce around!</p>
+<button>Start Animation</button>
+
+<div id="ball"></div>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+
+    // Move Right
+    $("#ball").animate({ left: '1000px' }, 1500, function(){
+      $(this).css("background-color", "blue");
+    })
+
+    // Move Down
+    .animate({ top: '500px', height:'120px', width:'120px' }, 1500, function(){
+      $(this).css("background-color", "green");
+    })
+
+    // Move Left
+    .animate({ left: '50px', height:'80px', width:'80px' }, 1500, function(){
+      $(this).css("background-color", "purple");
+    })
+
+    // Move Up (back to start)
+    .animate({ top: '50px', height:'100px', width:'100px' }, 1500, function(){
+      $(this).css("background-color", "orange");
+      alert("🎈 Yay! The ball finished bouncing! 🎈");
+    });
+
+  });
+});
+</script>
+
+</body>
+</html>
