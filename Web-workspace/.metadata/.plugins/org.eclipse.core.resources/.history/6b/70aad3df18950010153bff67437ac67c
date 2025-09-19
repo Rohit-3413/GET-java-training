@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Registration</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to Shop Stop</h1>
+		<img alt="customer shopping" src="images/customer.gif">
+		<form name="frmRegistration" action="FirstName">
+			<h2>
+				Enter Your First Name : <input name="txtFirstName" type="text"
+					id="txtFirstName"> <br>
+				<br> Enter Your Last Name : <input name="txtLastName"
+					type="text" id="txtLastName"> <br>
+				<br>
+				<br> <input type="submit" name="Submit" value="Submit">
+			</h2>
+		</form>
+	</div>
+</body>
+</html>

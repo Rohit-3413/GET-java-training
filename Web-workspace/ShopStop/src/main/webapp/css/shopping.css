@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: #f5f7fa;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Page Heading */
+h1 {
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  color: #00509e;
+  margin: 15px 0;
+}
+
+/* Form Styling */
+form {
+  background: #fff;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Labels & Select */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+select, input[type="text"], input[type="radio"] {
+  margin: 8px 0;
+  padding: 8px;
+  font-size: 15px;
+}
+
+/* Buttons */
+input[type="submit"], button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #00509e;
+}
+
+/* Confirmation Page Styling */
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.confirm-box {
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}

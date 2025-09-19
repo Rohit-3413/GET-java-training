@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+h1{
+	text-align:center;
+	background-color:orangered;
+	color:white;
+	border-radius:20px;
+	width:500px;
+	height:100px;
+	line-height:100px;
+	margin-left:auto;
+	margin-right:auto;
+}
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.container img{
+	padding-left:600px;
+	justify-content: center;
+	align-items: center;
+}

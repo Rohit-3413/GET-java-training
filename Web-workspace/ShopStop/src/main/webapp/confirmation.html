@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmation</title>
+<link rel="stylesheet" href="css/shopping.css">
+</head>
+<body>
+	<h1>Thank You for Shopping!</h1>
+	<p>Your order has been placed successfully.</p>
+	<p>
+		Payment Method:
+		<script>
+			document.write(new URLSearchParams(window.location.search)
+					.get('method'));
+		</script>
+	</p>
+
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<h1>Servlet Communication - sendRedirect() Method</h1>
+	<a href="test">Visit Coforge</a>
+	<!-- test is Mapping name of CoforgeServlet-  -->
+	<hr>
+</body>
+</html>

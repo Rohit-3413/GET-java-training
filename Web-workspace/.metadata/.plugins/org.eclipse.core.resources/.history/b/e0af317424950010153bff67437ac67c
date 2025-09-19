@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shop Stop Survey</title>
+</head>
+<body style="background-color: lightblue;">
+
+	<h1 style="text-align: center">Shop Stop Survey</h1>
+	<form name="surveyFrm" action="ShopStop" method="post">
+
+		<p>
+			<input type=hidden name=survey value="Survey-01 Results">
+		</p>
+
+		<BR> How many items do you purchase monthly from Shop Stop ?<BR>
+		<BR> <input name=rbitems type=radio value=1-100 checked>
+		1-100 <BR> <input type=radio name=rbitems value=100-200>
+		100-200 <BR> <input type=radio name=rbitems value=200-300>
+		200-300 <BR> <input type=radio name=rbitems value=300-400>
+		300-400 <BR> <input type=radio name=rbitems value=500-more>
+		500-more <BR> <BR> General Comments?<BR> <BR> <input
+			type=text name=txtcomment> <BR>
+		<BR> <input type=submit> <input type=reset>
+
+	</form>
+</body>
+</html>
