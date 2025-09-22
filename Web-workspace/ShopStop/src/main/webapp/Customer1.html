@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Registration</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+ <div class="form-container">
+    <h2>Customer Registration</h2>
+    <form action="CustomerServlet" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

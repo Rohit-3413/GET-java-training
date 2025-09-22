@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(to right, #74ebd5, #ACB6E5);
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	background: #fff;
+	padding: 30px 40px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	width: 400px;
+	text-align: center;
+}
+
+h1 {
+	color: #2c3e50;
+	margin-bottom: 20px;
+}
+
+form {
+	text-align: left;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin: 12px 0 5px;
+	color: #444;
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 14px;
+}
+
+input[type="text"]:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+input[type="submit"] {
+	width: 100%;
+	padding: 12px;
+	background: #007bff;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 6px;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background: #0056b3;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Add New Product</h1>
+
+		<form action="jsp/productdetails.jsp" method="post">
+			<label for="pId">Product Id:</label> <input type="text" name="pId"
+				id="pId"> <label for="pName">Product Name:</label> <input
+				type="text" name="pName" id="pName"> <label for="price">Price:</label>
+			<input type="text" name="price" id="price"> <input
+				type="submit" value="Register a Product">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function validateForm()
+{
+	if (frmRegistration.txtfirstname.value=="")
+		{
+		alert("Cannot be Blank")
+		}
+	}
+</script>
+</head>
+<body>
+	<h2 style="text-align: 'center';">Welcome to Shop Stop.</h2>
+	Please enter the required details.
+	<form action="jsp/Scriptlets.jsp" method="POST" name="frmRegistration"
+		onsubmit="validateForm()">
+		First Name:<input type="text" name="txtfirstname" /><br /> Last Name:<input
+			type="text" name="txtlastname" /><br /> <input type=submit
+			value="Submit" />
+	</form>
+</body>
+</html>
