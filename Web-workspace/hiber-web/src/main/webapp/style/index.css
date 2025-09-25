@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/* ---------- General Reset ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: rgba(33, 147, 176, 0.9);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+    background-color: #ffffffcc; /* semi-transparent white */
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #2193b0;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #17657a;
+    text-decoration: underline;
+}
+
+/* ---------- Sections ---------- */
+main {
+    padding: 30px 0;
+}
+
+.sections section {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.sections h2 {
+    margin-bottom: 12px;
+    color: #2193b0;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.sections hr {
+    border: 0;
+    height: 2px;
+    background: #2193b0;
+    width: 60px;
+    margin: 8px 0 16px 0;
+}
+
+/* Links inside sections */
+.sections a {
+    display: inline-block;
+    margin: 6px 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #e0f7fa;
+    color: #17657a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sections a:hover {
+    background-color: #2193b0;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: rgba(33, 147, 176, 0.9);
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 0.9rem;
+    margin-top: 30px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}

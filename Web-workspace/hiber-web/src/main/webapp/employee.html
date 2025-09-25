@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Employee Details</title>
+<link rel="stylesheet" href="style/employee.css">
+</head>
+<body>
+
+<h1>Hibernate Web App to Save Employee Object using Annotation Configuration</h1>
+	<div class="form-card">
+	
+  <h1>Enter Employee Details</h1>
+  <p class="form-subtitle">Please fill in all fields before submitting.</p>
+
+  <form method="post" action="EmployeeServlet" novalidate>
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g., Raj Kumar" required>
+      <!-- <small class="error-text">Name is required.</small> -->
+    </div>
+
+    <div class="field">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" placeholder="e.g., Finance" required>
+    </div>
+
+    <div class="field">
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" name="salary" step="0.01" placeholder="e.g., 55000.00" required>
+    </div>
+
+    <button type="submit">Save Employee</button>
+  </form>
+</div>
+</body>
+</html>
