@@ -1,0 +1,55 @@
+package collectionassignment;
+
+import java.util.*;
+
+public class ArrayListOperation {
+
+	public static void main(String[] args) {
+
+		// create new ArrayList
+		ArrayList<String> colors = new ArrayList<>();
+		// add some colors
+		colors.add("Red");
+		colors.add("Blue");
+		colors.add("Green");
+		colors.add("Yellow");
+		colors.add("Pink");
+		System.out.println("Original ArrayList: " + colors);
+		// iterate through all elements
+		System.out.println("\nIterating elements:");
+		for (String color : colors) {
+			System.out.println(color);
+		}
+		// insert at first position
+		colors.add(0, "Black");
+		System.out.println("\nAfter inserting at first position: " + colors);
+		// retrieve element at index 2
+		System.out.println("\nElement at index 2: " + colors.get(2));
+		// update specific element
+		colors.set(1, "Orange");
+		System.out.println("\nAfter updating 2nd element: " + colors);
+		// remove third element
+		colors.remove(2);
+		System.out.println("\nAfter removing 3rd element: " + colors);
+		// search element
+		System.out.println("\nSearching 'Pink': " + colors.contains("Pink"));
+		// sort ArrayList
+		Collections.sort(colors);
+		System.out.println("\nSorted ArrayList: " + colors);
+		// copy into another list
+		ArrayList<String> copiedList = new ArrayList<>(colors);
+		System.out.println("\nCopied ArrayList: " + copiedList);
+		// shuffle
+		Collections.shuffle(colors);
+		System.out.println("\nShuffled ArrayList: " + colors);
+		// reverse
+		Collections.reverse(colors);
+		System.out.println("\nReversed ArrayList: " + colors);
+		// extract portion (subList)
+		List<String> subList = colors.subList(1, 4); // index 1 to 3
+		System.out.println("\nExtracted portion: " + subList);
+		// replace 2nd element
+		colors.set(1, "White");
+		System.out.println("\nAfter replacing 2nd element: " + colors);
+	}
+}

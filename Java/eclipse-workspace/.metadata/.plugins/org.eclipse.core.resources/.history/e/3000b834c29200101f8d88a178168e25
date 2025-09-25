@@ -1,0 +1,41 @@
+package tollbooth;
+
+
+	public class AlleghenyTollBooth implements TollBooth {
+		private int totalTrucks;
+		private int totalReceipts;
+		public AlleghenyTollBooth() {
+			totalTrucks = 0;
+			totalReceipts = 0;
+		}
+		
+		@Override
+		public void calculateToll(Truck t) {
+			int axles = t.getAxles();
+			int weight = t.getWeight();
+			int tollDue = (axles * 5) + ((weight / 500) * 10);
+			System.out.println("Arrival of " + t.getMake() + " Truck");
+			System.out.println("Truck arrival - Axles: " + axles + 
+					" Total weight: " + weight + 
+					" Toll due: $" + tollDue);
+			totalTrucks++;
+			totalReceipts += tollDue;
+		}
+		
+		@Override
+		public void displayData() {
+			System.out.println("Totals since last collection - Receipts: $" 
+					+ totalReceipts + " Trucks: " + totalTrucks);
+		}
+		
+		@Override
+		public void collectReceipts() {
+			System.out.println("*** Collecting receipts ***");
+			displayData();
+			totalReceipts = 0;
+			totalTrucks = 0;
+			System.out.println("***** Reset Receipts **********");
+			displayData();
+		}
+	}
+

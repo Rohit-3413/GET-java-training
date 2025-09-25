@@ -1,0 +1,27 @@
+package streamsdemo;
+
+import java.util.stream.Stream;
+
+/**
+ * Author   :Rohit.10.Gupta
+ * Date     :Sep 12, 2025
+ * Time     :9:56:27 AM
+ * project  :AdvanceJava
+*/
+
+public class StreamExample1 {
+
+	public static void main(String[] args) {
+
+		Integer[] marks = {45, 88, 99, 45, 75, 23};
+		
+		// Build stream from Arrays
+		Stream<Integer> strm = Stream.of(marks);
+		
+		// Terminal operation - forEach()
+		// Lambda expressions are used to pass as parameters to another function
+		strm.forEach(i->System.out.println(i));
+
+	}
+
+}

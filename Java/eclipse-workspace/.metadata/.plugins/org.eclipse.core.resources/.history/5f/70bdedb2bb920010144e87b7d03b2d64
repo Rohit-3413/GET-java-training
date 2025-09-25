@@ -1,0 +1,14 @@
+package tollbooth;
+
+/**
+ * Author   :Rohit.10.Gupta
+ * Date     :Sep 16, 2025
+ * Time     :10:04:05 AM
+ * project  :CoreJava
+*/
+
+public interface TollBooth {
+	 void calculateToll(Truck t);
+	 void displayData();
+	 void collectReceipts();
+}

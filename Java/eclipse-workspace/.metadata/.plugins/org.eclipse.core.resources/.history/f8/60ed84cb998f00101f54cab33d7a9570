@@ -1,0 +1,17 @@
+package streamsdemo;
+
+/**
+ * Author   :Rohit.10.Gupta
+ * Date     :Sep 12, 2025
+ * Time     :10:59:00 AM
+ * project  :AdvanceJava
+*/
+
+public class ParallelStreamDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

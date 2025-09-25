@@ -1,0 +1,22 @@
+package tollbooth;
+
+
+public class TestTollBooth {
+	
+	public static void main(String[] args) {
+		
+		TollBooth booth = new AlleghenyTollBooth();
+		Truck ford = new FordTruck(5, 12500); // 5 axles, 12500kg
+		Truck nissan = new NissanTruck(2, 5000); // 2 axles, 5000kg
+		Truck daewoo = new DaewooTruck(6, 17000); // 6 axles, 17000kg
+		
+		booth.calculateToll(ford);
+		
+		booth.calculateToll(nissan);
+		
+		booth.calculateToll(daewoo);
+		
+		booth.collectReceipts(); // show totals + reset
+	}
+}
+
