@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6. Quiz App</title>
+<style>body{font-family:Arial;padding:12px} .q{margin-bottom:12px}</style>
+</head>
+<body>
+<h2>Quiz</h2>
+<form id="quizForm">
+ <div class="q"><p>1. 2+2 = ?</p>
+ <label><input type="radio" name="q1" value="3">3</label>
+ <label><input type="radio" name="q1" value="4">4</label>
+ </div>
+ <div class="q"><p>2. Capital of France?</p>
+ <label><input type="radio" name="q2" value="Paris">Paris</label>
+ <label><input type="radio" name="q2" value="London">London</label>
+ </div>
+ <div class="q"><p>3. JS stands for?</p>
+ <label><input type="radio" name="q3" value="JavaScript">JavaScript</label>
+ <label><input type="radio" name="q3" value="Java">Java</label>
+ </div>
+ <div class="q"><p>4. 5*6 = ?</p>
+ <label><input type="radio" name="q4" value="30">30</label>
+ <label><input type="radio" name="q4" value="20">20</label>
+ </div>
+ <div class="q"><p>5. HTML is for?</p>
+ <label><input type="radio" name="q5" value="structure">Structure</label>
+ <label><input type="radio" name="q5" value="style">Style</label>
+ </div>
+ <button type="submit">Submit</button>
+</form>
+<div id="result" aria-live="polite"></div>
+<script>
+const answers = {q1:'4', q2:'Paris', q3:'JavaScript', q4:'30', q5:'structure'};
+document.getElementById('quizForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ let score=0;
+ for(const k in answers){
+ const val = (new FormData(this)).get(k);
+ if(val === answers[k]) score++;
+ }
+ document.getElementById('result').textContent = 'Your score: ' + score + ' / 5';
+});
+</script>
+</body>
+</html>

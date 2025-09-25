@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10. Shopping Cart</title>
+<style>body{font-family:Arial;padding:12px} .product{margin-bottom:8px} table{width:100%;border-collapse:collapse} th,td{border:1px solid #ddd;padding:8px;text-align:left}</style>
+</head>
+<body>
+<h2>Products</h2>
+<div id="products"></div>
+<h3>Cart</h3>
+<table id="cart"><thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th><th>Action</th></tr></thead><tbody></tbody></table>
+<div id="bill">Total: $0.00</div>
+<script>
+const products = [
+ {id:1,name:'T-shirt',price:15.99},
+ {id:2,name:'Mug',price:7.5},
+ {id:3,name:'Cap',price:9.99}
+];
+const productsDiv = document.getElementById('products');
+const cartTbody = document.querySelector('#cart tbody');
+const bill = document.getElementById('bill');
+let cart = {};
+function renderProducts(){
+ products.forEach(p=>{
+ const d = document.createElement('div'); d.className='product';
+ d.innerHTML = `<strong>${p.name}</strong> - $${p.price.toFixed(2)} <button data-id="${p.id}">Add to Cart</button>`;
+ productsDiv.appendChild(d);
+ });
+}
+function updateCartUI(){
+ cartTbody.innerHTML='';
+ let total=0;
+ Object.values(cart).forEach(item=>{
+ const tr = document.createElement('tr');
+ const lineTotal = item.price * item.qty;
+ total += lineTotal;
+ tr.innerHTML = `<td>${item.name}</td>
+ <td><input type="number" min="1" value="${item.qty}" data-id="${item.id}" class="qty"></td>
+ <td>$${item.price.toFixed(2)}</td>
+ <td>$${lineTotal.toFixed(2)}</td>
+ <td><button class="remove" data-id="${item.id}">Remove</button></td>`;
+ cartTbody.appendChild(tr);
+ });
+ bill.textContent = 'Total: $' + total.toFixed(2);
+ // attach listeners for qty and remove
+ document.querySelectorAll('.qty').forEach(input=> input.addEventListener('change', function(){
+ const id = this.dataset.id; const q = Math.max(1,parseInt(this.value,10)||1);
+ cart[id].qty = q; updateCartUI();
+ }));
+ document.querySelectorAll('.remove').forEach(b=> b.addEventListener('click', function(){
+ delete cart[this.dataset.id]; updateCartUI();
+ }));
+}
+productsDiv.addEventListener('click', e=>{
+ if(e.target.tagName==='BUTTON'){
+ const id = e.target.dataset.id;
+ const p = products.find(x=> x.id==id);
+ if(cart[id]) cart[id].qty++;
+ else cart[id] = { ...p, qty: 1 };
+ updateCartUI();
+ }
+});
+renderProducts();
+</script>
+</body>
+</html>

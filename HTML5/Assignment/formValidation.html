@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1. Registration Form Validation</title>
+<style>
+ body{font-family:Arial;padding:16px} form{max-width:420px} label{display:block;margin-top:8px} input{width:100%;padding:8px;margin-top:4px} .error{color:#b00020;font-size:0.9em}
+ .success{color:green}
+</style>
+</head>
+<body>
+<h2>Registration</h2>
+<form id="regForm" novalidate>
+ <label>Username<input type="text" id="username"></label>
+ <label>Email<input type="email" id="email"></label>
+ <label>Password<input type="password" id="password"></label>
+ <label>Confirm Password<input type="password" id="confirm"></label>
+ <button type="submit">Register</button>
+ <div id="message" aria-live="polite"></div>
+</form>
+<script>
+document.getElementById('regForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ const u = document.getElementById('username').value.trim();
+ const em = document.getElementById('email').value.trim();
+ const pw = document.getElementById('password').value;
+ const cpw = document.getElementById('confirm').value;
+ const msg = document.getElementById('message');
+ msg.innerHTML = ''; msg.className = '';
+ if(!u){ msg.textContent='Username should not be empty.'; msg.className='error'; return; }
+ // basic email check: contains @ and domain after it
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ msg.textContent='Please enter a valid email.'; msg.className='error'; return; }
+ if(pw.length < 8){ msg.textContent='Password must be at least 8 characters.'; msg.className='error'; return; }
+ if(pw !== cpw){ msg.textContent='Confirm password must match.'; msg.className='error'; return; }
+ msg.textContent='Registration successful!'; msg.className='success';
+});
+</script>
+</body>
+</html>

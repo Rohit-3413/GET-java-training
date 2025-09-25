@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2. To-Do List</title>
+<style>body{font-family:Arial;padding:12px} #task{width:70%} ul{margin-top:12px} li.completed{text-decoration:line-through;opacity:0.7}</style>
+</head>
+<body>
+<h2>To-Do</h2>
+<input id="task" placeholder="New task"><button id="add">Add</button>
+<ul id="list" aria-live="polite"></ul>
+<script>
+const addBtn=document.getElementById('add');
+const list=document.getElementById('list');
+addBtn.addEventListener('click', addTask);
+document.getElementById('task').addEventListener('keydown', (e)=>{ if(e.key==='Enter') addTask(); });
+function addTask(){
+ const t = document.getElementById('task').value.trim();
+ if(!t) return;
+ const li = document.createElement('li');
+ li.textContent = t;
+ // complete toggle
+ li.addEventListener('click', ()=> li.classList.toggle('completed'));
+ // remove button
+ const rem = document.createElement('button');
+ rem.textContent='Remove';
+ rem.style.marginLeft='8px';
+ rem.addEventListener('click',(e)=>{ e.stopPropagation(); li.remove(); });
+ li.appendChild(rem);
+ list.appendChild(li);
+ document.getElementById('task').value='';
+}
+</script>
+</body>
+</html>

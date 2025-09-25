@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3. Countdown Timer</title>
+<style>body{font-family:Arial;padding:12px} #display{font-size:2rem;margin-top:12px}</style>
+</head>
+<body>
+<h2>Countdown Timer</h2>
+<input type="number" id="seconds" placeholder="Seconds"><button id="start">Start</button>
+<div id="display" aria-live="polite"></div>
+<script>
+let timer=null, remaining=0;
+document.getElementById('start').addEventListener('click', ()=>{
+ clearInterval(timer);
+ remaining = Math.max(0, parseInt(document.getElementById('seconds').value,10) || 0);
+ const disp = document.getElementById('display');
+ if(remaining<=0){ disp.textContent='Enter a positive number'; return; }
+ disp.textContent = remaining + 's';
+ timer = setInterval(()=>{
+ remaining--;
+ if(remaining>0) disp.textContent = remaining + 's';
+ else { clearInterval(timer); disp.textContent = "Time’s up!"; }
+ },1000);
+});
+</script>
+</body>
+</html>

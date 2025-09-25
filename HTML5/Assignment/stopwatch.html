@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7. Stopwatch</title>
+<style>body{font-family:Arial;padding:12px} #time{font-size:2rem;margin:8px 0}</style>
+</head>
+<body>
+<h2>Stopwatch</h2>
+<div id="time">00:00:00.00</div>
+<button id="start">Start</button><button id="stop">Stop</button><button id="reset">Reset</button>
+<script>
+let startTime=0, elapsed=0, timer=null;
+const fmt = ms => {
+ const cent = Math.floor((ms%1000)/10);
+ const s = Math.floor(ms/1000)%60;
+ const m = Math.floor(ms/60000)%60;
+ return [m,s,cent].map(n=>String(n).padStart(2,'0')).join(':').replace(/:(?=[0-9]{2}$)/,':');
+};
+function render(){ document.getElementById('time').textContent = fmt(elapsed + (Date.now()-startTime || 0)); }
+document.getElementById('start').addEventListener('click', ()=>{
+ if(timer) return;
+ startTime = Date.now();
+ timer = setInterval(render, 50);
+});
+document.getElementById('stop').addEventListener('click', ()=>{
+ if(!timer) return;
+ clearInterval(timer); timer=null; elapsed += Date.now() - startTime;
+ render();
+});
+document.getElementById('reset').addEventListener('click', ()=>{
+ clearInterval(timer); timer=null; startTime=0; elapsed=0; document.getElementById('time').textContent='00:00:00.00';
+});
+</script>
+</body>
+</html>

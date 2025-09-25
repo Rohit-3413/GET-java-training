@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8. Random Quotes</title>
+<style>body{font-family:Arial;padding:12px} #quote{font-style:italic;margin-top:12px}</style>
+</head>
+<body>
+<h2>Random Quote</h2>
+<button id="qbtn">Show Quote</button>
+<div id="quote" aria-live="polite"></div>
+<script>
+const quotes = [
+ "The only limit is your mind.",
+ "Dream big and dare to fail.",
+ "Action is the foundational key to success.",
+ "Stay hungry, stay foolish.",
+ "Simplicity is the ultimate sophistication.",
+ "Believe you can and you're halfway there.",
+ "Quality is not an act, it's a habit.",
+ "Small steps every day.",
+ "Learn as if you will live forever.",
+ "The future depends on what you do today."
+];
+document.getElementById('qbtn').addEventListener('click', ()=>{
+ const r = quotes[Math.floor(Math.random()*quotes.length)];
+ document.getElementById('quote').textContent = r;
+});
+</script>
+</body>
+</html>
