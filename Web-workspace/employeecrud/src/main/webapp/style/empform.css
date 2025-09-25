@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+		body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  margin: 0;
+  padding: 0;
+  
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  font-size: 32px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.container {
+  background: #ffffffdd; /* semi-transparent white */
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  width: 420px;
+  margin: 40px auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+
+h2 {
+  color: #007bff;
+  margin: 25px 0 20px;
+  font-size: 22px;
+}
+
+.container a {
+  display: block;           /* ensures full width for styling */
+  text-decoration: none;    /* removes underline */
+  color: #fff;              /* text color */
+  background: #28a745;      /* green background */
+  padding: 12px 20px;       /* spacing inside button */
+  border-radius: 10px;      /* rounded corners */
+  font-weight: bold;        /* bold text */
+  margin: 10px 0;           /* spacing between links */
+  text-align: center;       /* center text */
+  transition: all 0.3s ease; /* smooth hover effect */
+}
+
+.container a:hover {
+  background: #1e7e34;      /* darker green on hover */
+  transform: scale(1.05);   /* subtle enlarge effect */
+}
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.radio-group input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}

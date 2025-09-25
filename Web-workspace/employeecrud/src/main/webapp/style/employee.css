@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #e6f0ff;
+}
+
+a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.update-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.update-btn:hover {
+  background: #1e7e34;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #b02a37;
+  transform: scale(1.05);
+}
+
+.add-user-link {
+  display: block;
+  width: fit-content;
+  margin: 25px auto;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.add-user-link:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}

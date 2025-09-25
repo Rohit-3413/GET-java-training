@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10 Aug, 2021 11:26:10 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.coforge.training.hibernatedemo.model.Employee" table="EMPLOYEE100">
+        <id name="empId" type="int">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+         <property name="basic" type="double">
+            <column name="SALARY" />
+        </property>
+        <property name="dept" type="java.lang.String">
+            <column name="DEPARTMENT" />
+        </property>
+         <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

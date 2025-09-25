@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enter Employee Details</title>
+
+<link rel="stylesheet" href="style/empform.css"> <!-- external css -->
+</head>
+<body>
+<h1>Coforge Employee Management System</h1>
+	<div class="container">
+ 
+	 <a href="index.html">Home</a>
+  <a href="ViewServlet">View All Records</a>
+	
+  <h2>Add New Employee</h2>
+  <form action="NewEmployee.jsp" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter Name" required>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Enter Password" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter Email" required>
+
+    <label>Sex:</label>
+    <div class="radio-group">
+      <input type="radio" name="sex" value="male" id="male" checked>
+      <label for="male">Male</label>
+      <input type="radio" name="sex" value="female" id="female">
+      <label for="female">Female</label>
+    </div>
+
+    <label for="country">Country:</label>
+    <select name="country" id="country" required>
+      <option>India</option>
+      <option>Japan</option>
+      <option>Germany</option>
+      <option>USA</option>
+      <option>Other</option>
+    </select>
+
+    <input type="submit" value="Add Employee">
+  </form>
+</div>
+</body>
+</html>
