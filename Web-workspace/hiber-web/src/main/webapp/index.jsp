@@ -34,7 +34,7 @@
                 <h2>Query Options</h2>
                 <hr>
                 <a href="hql.jsp">HQL</a>
-                <a href="EmployeeCriteria.jsp">Criteria API</a>
+                <a href="Criteria.jsp">Criteria API</a>
                 <a href="Manipulation.jsp">DML</a>
             </section>
 

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Root theme variables */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --border: #e5e7eb;
+  --card-bg: #ffffff;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Full-page centering */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+}
+
+/* Container for heading + form */
+.center-container {
+  text-align: center;
+}
+
+/* Heading */
+.center-container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Form styling */
+.center-container form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left; /* keep labels aligned */
+}
+
+/* Inputs */
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+form input[type="text"]:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+/* Checkbox group */
+.skills-group {
+  margin-bottom: 1.5rem;
+}
+.skills-group span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.skills-group label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #6b7280;
+}
+.skills-group input[type="checkbox"] {
+  accent-color: var(--primary);
+  margin-right: 6px;
+}
+
+/* Button */
+form button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+form button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+form button:active {
+  transform: translateY(0);
+}

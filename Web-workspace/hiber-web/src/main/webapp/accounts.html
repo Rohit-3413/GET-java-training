@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Bank Account</title>
+<link rel="stylesheet" type="text/css" href="style/account.css">
+</head>
+<body>
+<div class="full">
+    <h1>Add Bank Account</h1>
+  </div>
+
+  <form method="post" action="AccountServlet">
+    <div class="full section-title">Account Details</div>
+
+    <div>
+      <label>Account Number</label>
+      <input type="text" name="accountNumber" required>
+    </div>
+
+    <div>
+      <label>Holder Name</label>
+      <input type="text" name="holderName" required>
+    </div>
+
+    <div>
+      <label>Balance</label>
+      <input type="number" name="balance" step="0.01" required>
+      <div class="hint">Enter current balance</div>
+    </div>
+
+    <div>
+      <label>Account Type</label>
+      <select name="accountType" id="accountType" required>
+        <option value="">Select type</option>
+        <option value="SAVINGS">Savings</option>
+        <option value="CURRENT">Current</option>
+      </select>
+    </div>
+
+    <div id="interestGroup" style="display:none;">
+      <label>Interest Rate (%)</label>
+      <input type="number" name="interestRate" step="0.01">
+    </div>
+
+    <div id="overdraftGroup" style="display:none;">
+      <label>Overdraft Limit</label>
+      <input type="number" name="overdraftLimit" step="0.01">
+    </div>
+
+    <button type="submit">Save Account</button>
+  </form>
+
+  <script>
+    const typeSelect = document.getElementById('accountType');
+    const interestGroup = document.getElementById('interestGroup');
+    const overdraftGroup = document.getElementById('overdraftGroup');
+
+    function toggleExtras() {
+      const v = typeSelect.value;
+      interestGroup.style.display = v === 'SAVINGS' ? 'block' : 'none';
+      overdraftGroup.style.display = v === 'CURRENT' ? 'block' : 'none';
+    }
+
+    typeSelect.addEventListener('change', toggleExtras);
+  </script>
+</body>
+</html>

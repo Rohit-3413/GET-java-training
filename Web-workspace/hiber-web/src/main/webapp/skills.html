@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enter Skills</title>
+<link rel="stylesheet" type="text/css" href="style/skills.css">
+</head>
+<body>
+<div class="center-container">
+  <h1>Add User with Skills</h1>
+  <form method="post" action="UserServlet">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <div class="skills-group">
+          <span>Skills:</span>
+          <label><input type="checkbox" name="skills" value="Java"> Java</label>
+          <label><input type="checkbox" name="skills" value="Hibernate"> Hibernate</label>
+          <label><input type="checkbox" name="skills" value="Spring"> Spring</label>
+          <label><input type="checkbox" name="skills" value="Angular"> Angular</label>
+      </div>
+
+      <button type="submit">Save User</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Fri Sep 19 16:03:26 IST 2025
+#Fri Sep 26 11:06:26 IST 2025
 org.eclipse.jst.jee.server\:ShopStop=C\:\\apache-tomcat-10.1.46\\wtpwebapps\\ShopStop
+org.eclipse.jst.jee.server\:hiber-web=C\:\\apache-tomcat-10.1.46\\wtpwebapps\\hiber-web

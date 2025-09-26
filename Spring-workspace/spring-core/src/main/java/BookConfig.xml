@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+  
+  <!-- Create Book Objects.
+   IOC - Creation of Objects is out sourced  to XML file. -->
+  <bean id="book1" class="com.coforge.training.springcore.model.Book"> 
+  	<!-- Dependency Injection using Constructor -->	
+  	<constructor-arg value="111" type="int"></constructor-arg>
+  	<constructor-arg value="Java Programming" type="String"></constructor-arg>
+  	<constructor-arg value="James Gosling" type="String"></constructor-arg>
+  	<constructor-arg value="BPB Publications" type="String"></constructor-arg>
+  	<constructor-arg value="250" type="int"></constructor-arg>
+  </bean>
+  
+  <bean id="book2" class="com.coforge.training.springcore.model.Book">  
+  	<!-- Dependency Injection using Constructor -->	
+  	<constructor-arg value="222" type="int"></constructor-arg>
+  	<constructor-arg value="Python Essentials" type="String"></constructor-arg>
+  	<constructor-arg value="Bala Guruswamy" type="String"></constructor-arg>
+  	<constructor-arg value="Prime Publications" type="String"></constructor-arg>
+  	<constructor-arg value="300" type="int"></constructor-arg>
+  </bean>
+  
+  <bean id="book3" class="com.coforge.training.springcore.model.Book">  
+  	<!-- Dependency Injection using Constructor -->	
+  	<constructor-arg value="333" type="int"></constructor-arg>
+  	<constructor-arg value="Mongo DB Made Simple" type="String"></constructor-arg>
+  	<constructor-arg value="Dwight Merriman" type="String"></constructor-arg>
+  	<constructor-arg value="Oxford Publications" type="String"></constructor-arg>
+  	<constructor-arg value="200" type="int"></constructor-arg>
+  </bean>
+  
+  
+  
+  </beans>

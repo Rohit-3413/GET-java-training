@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- Create Student Objects. IOC - Creation of Objects is out sourced to 
+		XML file. -->
+	<bean id="student1" class="com.coforge.training.springcore.model.Student">
+		<!-- Dependency Injection using Setter -->
+		<property name="rollNo" value="999"></property>
+		<property name="name" value="Alex John"></property>
+		<property name="college" value="IP University"></property>
+		<property name="marks" value="85"></property>
+	</bean>
+	
+	<bean id="student2" class="com.coforge.training.springcore.model.Student">
+		<!-- Dependency Injection using Setter -->
+		<property name="rollNo" value="777"></property>
+		<property name="name" value="Rohit Gupta"></property>
+		<property name="college" value="Graphic Era Hill University"></property>
+		<property name="marks" value="99"></property>
+	</bean>
+  
+  
+  </beans>

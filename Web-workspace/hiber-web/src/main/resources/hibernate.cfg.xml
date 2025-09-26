@@ -21,6 +21,11 @@
     
     <!--  Annotation Class  -->
     <mapping class="com.coforge.training.hiberweb.model.Employee"/>
+	<mapping class="com.coforge.training.hiberweb.model.User"/>
+	<mapping class="com.coforge.training.hiberweb.model.ShoppingCart"/>
+	<mapping class="com.coforge.training.hiberweb.model.Account"/>
+	<mapping class="com.coforge.training.hiberweb.model.SavingsAccount"/>
+	<mapping class="com.coforge.training.hiberweb.model.CurrentAccount"/>
     
      </session-factory>
 </hibernate-configuration>
