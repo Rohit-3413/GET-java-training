@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- Create Address Objects. IOC - Creation of Objects is out sourced to 
+		XML file. -->
+	<bean id="address1" class="com.coforge.training.springcore.model.Address">
+		<!-- Dependency Injection using Setter -->
+		<property name="addressLine1" value="#66 Park Street"></property>
+		<property name="city" value="Kolkatta"></property>
+		<property name="state" value="West Bengal"></property>
+		<property name="country" value="India"></property>
+	</bean>
+	
+	<!-- Create Person Objects.-->
+	<bean id="person1" class="com.coforge.training.springcore.model.Person">
+		<!-- Dependency Injection using Setter -->
+		<property name="id" value="1111"></property>
+		<property name="name" value="James Gosling"></property>
+		<property name="address" ref="address1"></property>
+	</bean>
+	
+	<bean id="address2" class="com.coforge.training.springcore.model.Address">
+		<!-- Dependency Injection using Setter -->
+		<property name="addressLine1" value="IT City Greater Noida"></property>
+		<property name="city" value="Greater Noida"></property>
+		<property name="state" value="Uttar Pradesh"></property>
+		<property name="country" value="India"></property>
+	</bean>
+	
+	<bean id="person2" class="com.coforge.training.springcore.model.Person">
+		<!-- Dependency Injection using Setter -->
+		<property name="id" value="2222"></property>
+		<property name="name" value="Rohit Das Gupta"></property>
+		<property name="address" ref="address2"></property>
+	</bean>
+	
+	<bean id="person3" class="com.coforge.training.springcore.model.Person">
+		<!-- Dependency Injection using Setter -->
+		<property name="id" value="3333"></property>
+		<property name="name" value="Udit Chauhan"></property>
+		<property name="address" ref="address2"></property>
+	</bean>
+	
+	</beans>

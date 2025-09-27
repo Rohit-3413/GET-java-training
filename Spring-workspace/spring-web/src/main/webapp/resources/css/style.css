@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* Base reset */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #f7fbff, #ffffff);
+    margin: 0;
+    padding: 30px;
+}
+
+/* Container box */
+.container, .card {
+    width: 420px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #0b3b66;
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+/* Inputs & select */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Buttons */
+input[type=submit] {
+    background: #0077d9;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+input[type=submit]:hover {
+    background: #005ea6;
+}
+
+/* Success card */
+.card h2 {
+    color: green;
+    margin-bottom: 18px;
+}
+.card p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+.card span {
+    font-weight: bold;
+    color: #0b3b66;
+}

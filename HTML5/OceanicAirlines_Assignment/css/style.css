@@ -32,7 +32,10 @@ header {
 }
 .nav a {
  display: block;
- padding: 10px 20px;
+ padding: 10px 30px;
+ margin-left: auto;
+ margin-right: 130px;
+ margin-bottom: 5px;
  background: #cce0ff;
  border-radius: 8px 8px 0 0;
  text-decoration: none;
@@ -62,4 +65,17 @@ header {
 img, h1{
 justify-content: center;
 align-items: center;
+border-radius: 20px;
+}
+
+.heading{
+    justify-content: center;
+}
+
+.main-content{
+    background-color: white;
+    padding: 10px;
+    padding-left: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
