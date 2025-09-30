@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+   font-family: 'Georgia', serif; /* Elegant serif font */
+    font-size: 48px; /* Large and prominent font size */
+    color: #2c3e50; /* Dark, professional color */
+    text-align: center; /* Center-align text */
+    margin: 20px 0; /* Margin for spacing above and below */
+    padding: 10px; /* Padding inside the heading */
+    background-color: #ecf0f1; /* Light background color */
+    border: 2px solid #3498db; /* Blue border around the heading */
+    border-radius: 5px; /* Rounded corners for the border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Light shadow for text */
+}
+
+table {
+        width: 80%; /* Set the table width to 80% of its container */
+        max-width: 1200px; /* Optional: Limit the maximum width of the table */
+        border-collapse: collapse; /* Merge borders for a cleaner look */
+        margin: 20px 0; /* Margin above and below the table */
+        font-family: 'Arial', sans-serif; /* Font for the table text */
+        margin: 20px auto; /* Center the table horizontally with margin above and below */
+    }
+
+    thead {
+        background-color: #3498db; /* Blue background for the header */
+        color: #fff; /* White text color */
+    }
+
+    th, td {
+        padding: 12px 15px; /* Padding inside the cells */
+        border: 1px solid #ddd; /* Light grey border for cells */
+        text-align: left; /* Left-align text in cells */
+    }
+
+    th {
+        font-size: 16px; /* Larger font size for header cells */
+        font-weight: bold; /* Bold text for header cells */
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light grey background for even rows */
+    }
+
+    tbody tr:hover {
+        background-color: #e0e0e0; /* Slightly darker grey background on hover */
+        color: #3498db; /* Blue font color on hover */
+    }
+
+    td {
+        font-size: 14px; /* Font size for table data cells */
+    }
+
+    /* Style for action buttons if you want to add them later */
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .action-buttons button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .action-buttons .edit {
+        background-color: #2ecc71; /* Green background for edit button */
+    }
+
+    .action-buttons .delete {
+        background-color: #e74c3c; /* Red background for delete button */
+    }
+
+    .action-buttons button:hover {
+        opacity: 0.8; /* Slight transparency on hover */
+    }
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="submit"], input[type="radio"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: auto;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+ a {
+        display: inline-block; /* Make the link behave like a button */
+        text-decoration: none; /* Remove the underline from the link */
+        font-family: 'Arial', sans-serif; /* Set the font family */
+        font-size: 16px; /* Set the font size */
+        color: #fff; /* Set the text color to white */
+        background-color: #3498db; /* Set the background color to blue */
+        padding: 10px 20px; /* Add padding inside the link */
+        border-radius: 5px; /* Round the corners of the link */
+        border: 2px solid #2980b9; /* Add a darker blue border */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  		text-align:center;
+  		 margin: 20px 0;
+    }
+
+    a:hover {
+        background-color: #2980b9; /* Darken the background color on hover */
+        color: #ecf0f1; /* Slightly lighten the text color on hover */
+    }
