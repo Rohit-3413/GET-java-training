@@ -63,6 +63,12 @@ h2 {
 		<a class="button-link" href="noida" role="button">Noida Page</a>
 		
 		<a class="button-link" href="userRegistration" role="button">User Registration</a>
+		
+		<a class="button-link" href="user" role="button">User Info</a><br><br>
+		
+		<a class="button-link" href="reservation" role="button"> Train Reservation</a>
+		
+		<a class="button-link" href="login" role="button"> Login</a>
 	</div>
 
 </body>

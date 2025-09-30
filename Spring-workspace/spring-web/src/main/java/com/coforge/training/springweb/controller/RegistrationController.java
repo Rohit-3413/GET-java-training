@@ -19,7 +19,7 @@ import com.coforge.training.springweb.model.User;
 public class RegistrationController {
 
 	// Load Registration form
-	
+	// Model is a container to pass data from controller to view
 	@GetMapping("/userRegistration")
 	public String ShowRegisterForm(Model theModel) {
 		
@@ -33,7 +33,7 @@ public class RegistrationController {
 	@PostMapping("/saveUser")
 	public String submitForm(@ModelAttribute("user") User user, Model model) {
 		model.addAttribute("user", user);	// Pass user to success page
-		return "success";
+		return "success";	// returns user object+success.jsp
 	}
 	
 	
