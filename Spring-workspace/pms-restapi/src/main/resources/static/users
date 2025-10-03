@@ -1,0 +1,132 @@
+[
+  {
+    "email": "john.doe@example.com",
+    "fname": "John",
+    "lname": "Doe",
+    "password": "SecurePass@123",
+    "dob": "1985-03-15",
+    "phoneNo": "12025550123",
+    "address": {
+      "street": "123 Main St",
+      "city": "New York",
+      "pincode": 10001
+    }
+  },
+  {
+    "email": "emily.smith@example.co.uk",
+    "fname": "Emily",
+    "lname": "Smith",
+    "password": "Password#UK2025",
+    "dob": "1990-07-22",
+    "phoneNo": "447911123456",
+    "address": {
+      "street": "45 Queen's Road",
+      "city": "London",
+      "pincode": 56789
+    }
+  },
+  {
+    "email": "li.wei@example.cn",
+    "fname": "Li",
+    "lname": "Wei",
+    "password": "ChinaPass@88",
+    "dob": "1988-12-30",
+    "phoneNo": "8613800138000",
+    "address": {
+      "street": "No. 78 Nanjing Rd",
+      "city": "Shanghai",
+      "pincode": 200000
+    }
+  },
+  {
+    "email": "sofia.hernandez@example.mx",
+    "fname": "Sofia",
+    "lname": "Hernandez",
+    "password": "Mexico@2024",
+    "dob": "1992-01-05",
+    "phoneNo": "525512345678",
+    "address": {
+      "street": "Av. Reforma 234",
+      "city": "Mexico City",
+      "pincode": 11000
+    }
+  },
+  {
+    "email": "mario.rossi@example.it",
+    "fname": "Mario",
+    "lname": "Rossi",
+    "password": "ItaliaPass99",
+    "dob": "1983-05-18",
+    "phoneNo": "393123456789",
+    "address": {
+      "street": "Via Roma 45",
+      "city": "Rome",
+      "pincode": 00100
+    }
+  },
+  {
+    "email": "emma.jansen@example.nl",
+    "fname": "Emma",
+    "lname": "Jansen",
+    "password": "Dutch#2024!",
+    "dob": "1995-11-25",
+    "phoneNo": "31612345678",
+    "address": {
+      "street": "Keizersgracht 100",
+      "city": "Amsterdam",
+      "pincode": 1015
+    }
+  },
+  {
+    "email": "alex.tanaka@example.jp",
+    "fname": "Alex",
+    "lname": "Tanaka",
+    "password": "Japan@45678",
+    "dob": "1980-09-09",
+    "phoneNo": "819012345678",
+    "address": {
+      "street": "1-2-3 Shibuya",
+      "city": "Tokyo",
+      "pincode": 1500002
+    }
+  },
+  {
+    "email": "fatima.khan@example.ae",
+    "fname": "Fatima",
+    "lname": "Khan",
+    "password": "Dubai#Secure1",
+    "dob": "1993-04-03",
+    "phoneNo": "971501234567",
+    "address": {
+      "street": "Palm Jumeirah Rd",
+      "city": "Dubai",
+      "pincode": 00000
+    }
+  },
+  {
+    "email": "nathan.brown@example.ca",
+    "fname": "Nathan",
+    "lname": "Brown",
+    "password": "CanadaSecure@1",
+    "dob": "1986-06-11",
+    "phoneNo": "14161234567",
+    "address": {
+      "street": "100 King St W",
+      "city": "Toronto",
+      "pincode": "M5X1A9"
+    }
+  },
+  {
+    "email": "amelie.dubois@example.fr",
+    "fname": "Amelie",
+    "lname": "Dubois",
+    "password": "Paris#Love2024",
+    "dob": "1991-10-10",
+    "phoneNo": "33612345678",
+    "address": {
+      "street": "10 Rue de la Paix",
+      "city": "Paris",
+      "pincode": 75002
+    }
+  }
+]
