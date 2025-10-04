@@ -27,7 +27,6 @@
     <fullyQualifiedTypeName name="oopsdemo4.Candidate"/>
     <fullyQualifiedTypeName name="oopsdemo4.Exam"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="exceptiondemo.ThrowsExample"/>
     <fullyQualifiedTypeName name="exceptiondemo.CheckingAccount"/>
     <fullyQualifiedTypeName name="exceptiondemo.InSufficientFundsException"/>
@@ -58,4 +57,7 @@
     <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="businesscode.Calculator"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
 </qualifiedTypeNameHistroy>
