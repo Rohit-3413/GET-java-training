@@ -16,6 +16,7 @@ import com.coforge.training.producthive.exception.ResourceNotFoundException;
 import com.coforge.training.producthive.model.Product;
 import com.coforge.training.producthive.service.ProductService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -31,7 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 * Time		:11:54:04 AM
 * Project	:pms-restapi
 */
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value="/api")	// Base URL for this controllers endpoints.
 public class ProductController {
