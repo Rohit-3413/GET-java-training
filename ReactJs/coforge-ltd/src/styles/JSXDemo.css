@@ -1,0 +1,57 @@
+.jsx-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f9fafc;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jsx-heading {
+  text-align: center;
+  color: #0078d7;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.jsx-intro {
+  text-align: center;
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.jsx-section {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.jsx-section h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.jsx-list {
+  list-style-type: "✨ ";
+  padding-left: 20px;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.jsx-footer {
+  text-align: center;
+  color: #555;
+  margin-top: 25px;
+  font-size: 0.95rem;
+}
+
+.jsx-footer hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}

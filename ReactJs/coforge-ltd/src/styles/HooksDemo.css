@@ -1,0 +1,103 @@
+.hooks-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f9f9fb;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.hooks-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.hooks-container p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.hooks-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.hooks-container > ul > li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 5px solid #007bff;
+}
+
+.hooks-container > ul > li strong {
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.hooks-container ul ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-top: 8px;
+}
+
+.hooks-container code {
+  background: #eef1f5;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  color: #c7254e;
+}
+
+/* Section Styling */
+.section {
+  margin-top: 25px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border-left: 5px solid #28a745;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section h3 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Inputs */
+input[type="text"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  width: 200px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0,123,255,0.4);
+}

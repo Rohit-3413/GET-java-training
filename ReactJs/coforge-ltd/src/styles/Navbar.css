@@ -1,0 +1,46 @@
+/* Style for the body to center everything */
+
+  
+  /* Navbar container */
+  .navbar {
+    background-color: #ab5e67; /* Dark background */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 0px; Space below the header */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Navigation list */
+  .nav-list {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Align items in a row */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation item */
+  .nav-item {
+    margin: 0 15px; /* Add spacing between items */
+  }
+  
+  /* Navigation link */
+  .nav-link {
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text */
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: bold; /* Bold for emphasis */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .nav-link:hover {
+    color: #f4b400; /* Change to accent color on hover */
+  }
+  
+  .nav-link.active {
+    color: #f4b400; /* Highlight active link */
+    border-bottom: 2px solid #f4b400; /* Underline active link */
+  }
+  

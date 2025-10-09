@@ -1,0 +1,35 @@
+.result-container {
+  text-align: center;
+  background-color: white;
+  width: 70%;
+  margin: 30px auto;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+}
+
+.result-container h2 {
+  color: #198754;
+  margin-bottom: 15px;
+}
+
+.result-container p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 8px 0;
+}
+
+button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0b5ed7;
+}
