@@ -38,6 +38,15 @@ export const Navbar = () => {
                 <li className="nav-item">
                      <Link to="/survey" className="nav-link">Survey</Link> {/* <a href='/'> */}         
                 </li>
+                <li className="nav-item">
+                     <Link to="/rest1" className="nav-link">REST API</Link> {/* <a href='/'> */}         
+                </li>
+                <li className="nav-item">
+                     <Link to="/customers" className="nav-link">Add Customer</Link> {/* <a href='/'> */}         
+                </li>
+                <li className="nav-item">
+                     <Link to="/display" className="nav-link">Customers RESTAPI</Link> {/* <a href='/'> */}         
+                </li>
                 
             </ul>
         </nav>

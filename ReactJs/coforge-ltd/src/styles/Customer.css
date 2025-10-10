@@ -1,0 +1,162 @@
+/* === Main Container === */
+.table-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f7f9fc; /* soft elegant background */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  overflow-x: auto;
+  transition: all 0.4s ease;
+}
+
+/* === Heading === */
+.table-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: blue;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.table-container h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #00c9a7);
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* === Table === */
+.customer-table {
+  width: 75%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin: auto;
+}
+
+/* Table Header */
+.customer-table thead {
+  background: linear-gradient(90deg, #4a90e2, #00c9a7);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+.customer-table th {
+  padding: 14px 16px;
+  text-align: center;
+}
+
+/* Table Body */
+.customer-table td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid #e8eef3;
+  color:crimson;
+  font-weight: bold;
+}
+
+/* Alternate Row Color */
+.customer-table tbody tr:nth-child(even) {
+  background: #f4f7fa;
+}
+
+/* Hover Effect */
+.customer-table tbody tr:hover {
+  background: #eaf6ff;
+  transition: 0.3s ease;
+  transform: scale(1.005);
+}
+
+/* === Image Styling === */
+.customer-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 25%;
+  object-fit: cover;
+  border: 2px solid #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.customer-image:hover {
+  transform: scale(1.2);
+}
+
+/* === Buttons === */
+button {
+  background: linear-gradient(90deg, #4a90e2, #00c9a7);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(74, 144, 226, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00c9a7, #4a90e2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 20px;
+  }
+
+  .customer-table thead {
+    display: none;
+  }
+
+  .customer-table,
+  .customer-table tbody,
+  .customer-table tr,
+  .customer-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .customer-table tr {
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  .customer-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+  }
+
+  .customer-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: #4a90e2;
+  }
+
+  .customer-image {
+    width: 65px;
+    height: 65px;
+  }
+}

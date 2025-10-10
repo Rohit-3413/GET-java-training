@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +23,7 @@ import com.coforge.training.producthive.service.CustomerService;
 * Time		:10:32:42 AM
 * Project	:pms-restapi
 */
-
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
 public class CustomerController {

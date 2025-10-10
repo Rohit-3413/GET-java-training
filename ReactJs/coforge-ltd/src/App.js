@@ -14,6 +14,9 @@ import { Login } from './components/Login';
 import { HooksDemo } from './components/HooksDemo';
 import ListDemo from './components/ListDemo';
 import SurveyForm from './components/SurveyForm';
+import { RestAPIDemo } from './components/RestAPIDemo';
+import { CustomerForm } from './components/CustomerForm';
+import { DisplayCustomers } from './components/DisplayCustomers';
 
 function App() {
   return (
@@ -39,7 +42,11 @@ function App() {
         <Route path='/addNum' element={<Addition/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/hooks' element={<HooksDemo/>} />
+        <Route path='/list' element={<ListDemo/>} />
         <Route path='/survey' element={<SurveyForm/>} />
+        <Route path='/rest1' element={<RestAPIDemo/>} />
+        <Route path='/customers' element={<CustomerForm/>} />
+        <Route path='/display' element={<DisplayCustomers/>} />
         
       </Routes>
      </Router>
